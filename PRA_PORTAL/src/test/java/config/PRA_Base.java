@@ -1,0 +1,54 @@
+package config;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PRA_Base {
+	static Properties prop;
+	public static WebDriver wd;
+		public static void load_property_file() throws IOException
+		{
+	     prop=new Properties();
+	try {
+		InputStream input=new FileInputStream("E:\\CABI Project\\src\\test\\java\\config\\config.properties");
+		prop.load(input);
+		
+	  
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		}
+		
+		public static String getobject(String Data) throws IOException
+		{
+			load_property_file();
+			String data= prop.getProperty(Data);
+			return data;
+		}
+	
+
+
+	public void initialzation(String URL) throws InterruptedException
+	{
+		
+		System.setProperty("webdriver.chrome.driver", "E:\\CABI Project\\Driver\\chromedriver.exe");
+		wd=new ChromeDriver();
+		wd.get(URL);
+		Thread.sleep(8000);
+		wd.manage().window().maximize();
+	}
+	
+	public void teardown()
+	{
+		
+		wd.close();
+		
+	}
+}
