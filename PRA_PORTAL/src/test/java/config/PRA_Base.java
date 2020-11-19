@@ -9,46 +9,55 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class PRA_Base {
-	static Properties prop;
-	public static WebDriver wd;
+public class PRA_Base 
+{
+	    static Properties prop;
+	    static Properties prop2;
+	    public static WebDriver wd;
+	    //to load data from property file
 		public static void load_property_file() throws IOException
 		{
 	     prop=new Properties();
-	try {
-		InputStream input=new FileInputStream("E:\\CABI Project\\src\\test\\java\\config\\config.properties");
+	     
+	     try {
+		InputStream input=new FileInputStream("E:\\CABI\\PRA_PORTAL\\src\\test\\java\\config\\config.properties");
 		prop.load(input);
 		
+		InputStream input2=new FileInputStream("E:\\CABI\\PRA_PORTAL\\src\\test\\java\\config\\mycabi.properties");
+		prop.load(input2);
 	  
-	} catch (FileNotFoundException e) {
+	     } catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
-	}
+	     }
 		}
 		
+		//to get data from config property file
 		public static String getobject(String Data) throws IOException
 		{
 			load_property_file();
 			String data= prop.getProperty(Data);
 			return data;
 		}
-	
+		/*
+		 * //to load data from mycabi property file public static String
+		 * getobject_for_mycabi(String Data2) throws IOException { load_property_file();
+		 * String data2=prop2.getProperty(Data2); return data2; }
+		 */
 
-
-	public void initialzation(String URL) throws InterruptedException
-	{
-		
-		System.setProperty("webdriver.chrome.driver", "E:\\CABI Project\\Driver\\chromedriver.exe");
+        //for browser opening 
+	   public void initialzation(String URL) throws InterruptedException
+	   {
+		System.setProperty("webdriver.chrome.driver", "E:\\CABI\\PRA_PORTAL\\Driver\\chromedriver.exe");
 		wd=new ChromeDriver();
 		wd.get(URL);
 		Thread.sleep(8000);
 		wd.manage().window().maximize();
-	}
-	
-	public void teardown()
-	{
+	    }
+	    //to close browser
+	   public void teardown()
+	    {
 		
 		wd.close();
-		
-	}
+		}
 }
