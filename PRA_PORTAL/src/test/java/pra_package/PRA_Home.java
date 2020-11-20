@@ -1,6 +1,7 @@
 package pra_package;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
@@ -14,6 +15,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import GmailAPiLib.GMail;
 import config.PRA_Base;
 import library.Utility;
 import pra_child_classes.Home;
@@ -54,13 +56,30 @@ public class PRA_Home extends PRA_Base{
 		ho.cleanup_team();
 		
 	}
-	//@Test(priority=3)
+	@Test(priority=3)
 	void Team_creation() throws Throwable
 	{
 		Home ho=PageFactory.initElements(wd, Home.class);
 		ho.Teamcreation_for_PRA();
-		ho.email_verification();
 		
+		
+	}
+	@Test(priority = 4)
+	void gmail_verification()
+	{
+		HashMap<String, String> hm = GMail.getGmailData("subject:streams");
+        System.out.println(hm.get("subject"));
+        System.out.println("=================");
+        System.out.println(hm.get("body"));
+        System.out.println("=================");
+        System.out.println(hm.get("link"));
+        
+        System.out.println("=================");
+        System.out.println("Total count of emails is :"+GMail.getTotalCountOfMails());
+        
+        System.out.println("=================");
+        boolean exist = GMail.isMailExist("streams");
+        System.out.println("title exist or not: " + exist);
 	}
 	@AfterMethod
 	void fail_testcase(ITestResult result)
