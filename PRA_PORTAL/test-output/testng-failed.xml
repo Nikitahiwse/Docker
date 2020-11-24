@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Home Test]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Home(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="pra_package.PRA_Home">
         <methods>
           <include name="fail_testcase"/>
-          <include name="title_verification"/>
+          <include name="pathway_creation"/>
           <include name="teardown_browerclosing"/>
-          <include name="login_Test"/>
           <include name="initialization_browser_opening"/>
         </methods>
       </class> <!-- pra_package.PRA_Home -->
     </classes>
-  </test> <!-- Home(failed) -->
-</suite> <!-- Failed suite [Home Test] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

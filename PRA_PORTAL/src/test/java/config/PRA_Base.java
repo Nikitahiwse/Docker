@@ -20,11 +20,16 @@ public class PRA_Base
 	     prop=new Properties();
 	     
 	     try {
-		InputStream input=new FileInputStream("E:\\CABI\\PRA_PORTAL\\src\\test\\java\\config\\config.properties");
+		InputStream input=new FileInputStream("E:\\CABI_NEW\\PRA_PORTAL\\src\\test\\java\\config\\config.properties");
 		prop.load(input);
 		
-		InputStream input2=new FileInputStream("E:\\CABI\\PRA_PORTAL\\src\\test\\java\\config\\mycabi.properties");
+		InputStream input2=new FileInputStream("E:\\CABI_NEW\\PRA_PORTAL\\src\\test\\java\\config\\mycabi.properties");
 		prop.load(input2);
+		
+		InputStream input3=new FileInputStream("E:\\CABI_NEW\\PRA_PORTAL\\src\\test\\java\\config\\ByPathway_Generation.properties");
+		prop.load(input3);
+		
+		
 	  
 	     } catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
@@ -48,7 +53,7 @@ public class PRA_Base
         //for browser opening 
 	   public void initialzation(String URL) throws InterruptedException
 	   {
-		System.setProperty("webdriver.chrome.driver", "E:\\CABI\\PRA_PORTAL\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\CABI_NEW\\PRA_PORTAL\\Driver\\chromedriver.exe");
 		wd=new ChromeDriver();
 		wd.get(URL);
 		Thread.sleep(8000);
@@ -58,6 +63,6 @@ public class PRA_Base
 	   public void teardown()
 	    {
 		
-		wd.close();
+		wd.quit();
 		}
 }

@@ -1,8 +1,6 @@
 package pra_package;
 
 import java.io.IOException;
-import java.util.HashMap;
-
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -15,11 +13,13 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-import GmailAPiLib.GMail;
+
 import config.PRA_Base;
 import library.Utility;
+import pra_child_classes.ByPathway;
 import pra_child_classes.Home;
 import pra_child_classes.Login;
+import pra_child_classes.Pathway_RiskAssessments;
 import pra_child_classes.Testcases_for_Home_report;
 import pra_child_classes.Title_verification;
 
@@ -27,7 +27,7 @@ public class PRA_Home extends PRA_Base{
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,Logger7,Logger8;
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
@@ -42,6 +42,7 @@ public class PRA_Home extends PRA_Base{
 		Title_verification title=new Title_verification();
 		title.website_title_verification("Pest Risk Analysis Tool");
 	}
+	
 	@Test(priority=2)
 	void login_Test() throws InterruptedException, IOException
 	{
@@ -49,38 +50,36 @@ public class PRA_Home extends PRA_Base{
         log.login_to_cpc(getobject("cpc_username"),getobject("cpc_password"));
 	    log.login_to_mycabi(getobject("mycabi_username"),getobject("mycabi_password"));
 	}
+	
+	
+	
 	//@Test(priority=3)
-	void cleanup() throws InterruptedException
-	{
-		Home ho=PageFactory.initElements(wd, Home.class);
-		ho.cleanup_team();
-		
-	}
-	@Test(priority=3)
 	void Team_creation() throws Throwable
 	{
 		Home ho=PageFactory.initElements(wd, Home.class);
 		ho.Teamcreation_for_PRA();
-		
-		
+			
 	}
+	
+	
 	@Test(priority = 4)
-	void gmail_verification()
+	void pathway_creation() throws Throwable
 	{
-		HashMap<String, String> hm = GMail.getGmailData("subject:streams");
-        System.out.println(hm.get("subject"));
-        System.out.println("=================");
-        System.out.println(hm.get("body"));
-        System.out.println("=================");
-        System.out.println(hm.get("link"));
-        
-        System.out.println("=================");
-        System.out.println("Total count of emails is :"+GMail.getTotalCountOfMails());
-        
-        System.out.println("=================");
-        boolean exist = GMail.isMailExist("streams");
-        System.out.println("title exist or not: " + exist);
+		ByPathway pathway = PageFactory.initElements(wd, ByPathway.class);
+		pathway.Initiation(getobject("ByPathway_Title_Group"));
+		pathway.group_of_pest();
+		pathway.Initiation(getobject("ByPathway_Title_List"));
+		pathway.generate_full_list();
 	}
+	
+	@Test(priority = 5)
+	void risk_assessments() throws Throwable
+	{
+		Pathway_RiskAssessments path = PageFactory.initElements(wd, Pathway_RiskAssessments.class);
+		path.assessments();
+	}
+	
+	
 	@AfterMethod
 	void fail_testcase(ITestResult result)
 	{
@@ -89,8 +88,8 @@ public class PRA_Home extends PRA_Base{
 			{
 			String temp=Utility.attachscreenshotreport(wd, result.getName());
 		
-			logger6.fail("Testcase name"+ result.getName());
-			logger6.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+			Logger8.fail("Testcase name"+ result.getName());
+			Logger8.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		    }}
 			catch(Exception e)
 			{
