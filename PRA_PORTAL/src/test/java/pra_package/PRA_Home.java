@@ -1,7 +1,7 @@
 package pra_package;
 
 import java.io.IOException;
-import java.util.HashMap;
+
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
@@ -15,9 +15,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-import GmailAPiLib.GMail;
 import config.PRA_Base;
 import library.Utility;
+import pra_child_classes.Banner_footer_PRA;
 import pra_child_classes.Home;
 import pra_child_classes.Login;
 import pra_child_classes.Testcases_for_Home_report;
@@ -27,11 +27,12 @@ public class PRA_Home extends PRA_Base{
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7;
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
 	{
+		System.out.println(getobject("url"));
 		initialzation(getobject("url"));
 		Testcases_for_Home_report testcase=new Testcases_for_Home_report();
 		testcase.testcase_creation();
@@ -39,8 +40,8 @@ public class PRA_Home extends PRA_Base{
 	@Test(priority=1)
 	void title_verification() throws InterruptedException
 	{
-		Title_verification title=new Title_verification();
-		title.website_title_verification("Pest Risk Analysis Tool");
+		//Title_verification title=new Title_verification();
+		Title_verification.website_title_verification("Pest Risk Analysis Tool");
 	}
 	@Test(priority=2)
 	void login_Test() throws InterruptedException, IOException
@@ -56,7 +57,7 @@ public class PRA_Home extends PRA_Base{
 		ho.cleanup_team();
 		
 	}
-	@Test(priority=3)
+	//@Test(priority=3)
 	void Team_creation() throws Throwable
 	{
 		Home ho=PageFactory.initElements(wd, Home.class);
@@ -64,23 +65,16 @@ public class PRA_Home extends PRA_Base{
 		
 		
 	}
-	@Test(priority = 4)
-	void gmail_verification()
+	@Test(priority = 3)
+	void Banner_footer() throws InterruptedException
 	{
-		HashMap<String, String> hm = GMail.getGmailData("subject:streams");
-        System.out.println(hm.get("subject"));
-        System.out.println("=================");
-        System.out.println(hm.get("body"));
-        System.out.println("=================");
-        System.out.println(hm.get("link"));
-        
-        System.out.println("=================");
-        System.out.println("Total count of emails is :"+GMail.getTotalCountOfMails());
-        
-        System.out.println("=================");
-        boolean exist = GMail.isMailExist("streams");
-        System.out.println("title exist or not: " + exist);
+		Banner_footer_PRA bf=PageFactory.initElements(wd, Banner_footer_PRA.class);
+		bf.banner();
+	    bf.footer();
+		
 	}
+	
+	
 	@AfterMethod
 	void fail_testcase(ITestResult result)
 	{

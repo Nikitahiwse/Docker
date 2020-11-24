@@ -75,7 +75,7 @@ public class Login extends PRA_Home{
 		submit.click();
 		Thread.sleep(3000);
 		logger1.log(Status.PASS, "Submit button got clicked successfully");
-		//Thread.sleep(4000);
+		Thread.sleep(4000);
 		System.out.println("login Test is passed");
 	}
 
