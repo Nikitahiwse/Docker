@@ -20,6 +20,7 @@ import library.Utility;
 import pra_child_classes.Banner_footer_PRA;
 import pra_child_classes.Home;
 import pra_child_classes.Login;
+import pra_child_classes.PRA_Home_tab;
 import pra_child_classes.Testcases_for_Home_report;
 import pra_child_classes.Title_verification;
 
@@ -27,7 +28,7 @@ public class PRA_Home extends PRA_Base{
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7,logger8,logger9,logger10,logger11;
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
@@ -65,13 +66,21 @@ public class PRA_Home extends PRA_Base{
 		
 		
 	}
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	void Banner_footer() throws InterruptedException
 	{
 		Banner_footer_PRA bf=PageFactory.initElements(wd, Banner_footer_PRA.class);
 		bf.banner();
 	    bf.footer();
 		
+	}
+	@Test(priority = 3)
+	void PRA_Home_Test() throws InterruptedException
+	{
+		PRA_Home_tab hometab=PageFactory.initElements(wd, PRA_Home_tab.class);
+		hometab.PRA_Home();
+		hometab.View_PRA();
+		hometab.View_Report();
 	}
 	
 	
@@ -83,8 +92,8 @@ public class PRA_Home extends PRA_Base{
 			{
 			String temp=Utility.attachscreenshotreport(wd, result.getName());
 		
-			logger6.fail("Testcase name"+ result.getName());
-			logger6.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+			logger11.fail("Testcase name"+ result.getName());
+			logger11.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		    }}
 			catch(Exception e)
 			{

@@ -7,7 +7,7 @@
         <methods>
           <include name="fail_testcase"/>
           <include name="teardown_browerclosing"/>
-          <include name="Banner_footer"/>
+          <include name="PRA_Home_Test"/>
           <include name="initialization_browser_opening"/>
         </methods>
       </class> <!-- pra_package.PRA_Home -->

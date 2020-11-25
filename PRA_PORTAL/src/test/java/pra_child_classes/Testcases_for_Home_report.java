@@ -12,6 +12,11 @@ public void testcase_creation()
 	logger4=extent.createTest("Footer Test");
 	logger5=extent.createTest("Team creation Test");
 	logger6=extent.createTest("By Pathway Test");
-	logger7=extent.createTest("Screenshot for failed testcase");
+	logger7=extent.createTest("PRA_Home_Test");
+	logger8=extent.createTest("My teams Previous PRA's");
+	logger9=extent.createTest("My teams reulated pest List");
+	logger10=extent.createTest("My teams reulated pest List");
+	logger11=extent.createTest("Screenshot for failed testcase");
+	
 }
 }
