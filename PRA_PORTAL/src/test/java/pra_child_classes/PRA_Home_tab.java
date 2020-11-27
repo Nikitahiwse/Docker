@@ -111,15 +111,19 @@ public class PRA_Home_tab extends PRA_Home {
 		Thread.sleep(2000);
 		List<WebElement>tablerow=wd.findElements(By.xpath("//div[@id='RecentPRADatagrid']//tbody//tr"));
 		int totalrow=tablerow.size();
+		int j=1;
 		for(int i=1;i<=totalrow;i++)
 		{
 		List<WebElement>Reports=wd.findElements(By.xpath("//div[@id='RecentPRADatagrid']//tr["+i+"]//a[text()='Report']"));
 		for(WebElement report:Reports)
 		{
+			
+			WebElement PRA_type=wd.findElement(By.xpath("//div[@id='RecentPRADatagrid']//tr["+j+"]//td[2]"));
+			String PRAtype=PRA_type.getText();
 			report.click();
 			Thread.sleep(3000);
 			logger7.log(Status.PASS," Report got clicked");
-			if(i==3)
+			if(PRAtype.equalsIgnoreCase("Pathway"))
 			{
 			PRA_report=wd.findElement(By.xpath("//div[@class='report-title']//strong"));
 			
@@ -135,10 +139,13 @@ public class PRA_Home_tab extends PRA_Home {
 			logger7.log(Status.PASS, Session_titile+" report is opened");
 			wd.navigate().back();
 			Thread.sleep(3000);
+			j++;
 		}
 		}
+		
 		
 	}
 	
 
-}
+	}
+	

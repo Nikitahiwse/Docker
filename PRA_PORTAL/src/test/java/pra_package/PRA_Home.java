@@ -21,6 +21,7 @@ import pra_child_classes.Banner_footer_PRA;
 import pra_child_classes.Home;
 import pra_child_classes.Login;
 import pra_child_classes.PRA_Home_tab;
+import pra_child_classes.Previous_PRA;
 import pra_child_classes.Testcases_for_Home_report;
 import pra_child_classes.Title_verification;
 
@@ -74,13 +75,23 @@ public class PRA_Home extends PRA_Base{
 	    bf.footer();
 		
 	}
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	void PRA_Home_Test() throws InterruptedException
 	{
 		PRA_Home_tab hometab=PageFactory.initElements(wd, PRA_Home_tab.class);
 		hometab.PRA_Home();
 		hometab.View_PRA();
 		hometab.View_Report();
+	}
+	@Test(priority = 3)
+	void Previous_PRA_Test() throws InterruptedException
+	{
+		Previous_PRA previous=PageFactory.initElements(wd, Previous_PRA.class);
+		previous.previousPRA();
+		previous.View_Bypathway_PRA();
+		previous.View_Report_from_previous_PRA();
+		previous.filter();
+		
 	}
 	
 	
@@ -99,7 +110,7 @@ public class PRA_Home extends PRA_Base{
 			{
 				System.out.println(e.getMessage());
 			}
-		
+	
 		
 	}
 	@AfterSuite
