@@ -22,6 +22,7 @@ import pra_child_classes.Home;
 import pra_child_classes.Login;
 import pra_child_classes.PRA_Home_tab;
 import pra_child_classes.Previous_PRA;
+import pra_child_classes.Regulated_Pest_list;
 import pra_child_classes.Testcases_for_Home_report;
 import pra_child_classes.Title_verification;
 
@@ -83,15 +84,25 @@ public class PRA_Home extends PRA_Base{
 		hometab.View_PRA();
 		hometab.View_Report();
 	}
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	void Previous_PRA_Test() throws InterruptedException
 	{
 		Previous_PRA previous=PageFactory.initElements(wd, Previous_PRA.class);
-		previous.previousPRA();
-		previous.View_Bypathway_PRA();
-		previous.View_Report_from_previous_PRA();
+		//previous.previousPRA();
+		//previous.View_Bypathway_PRA();
+		//previous.View_Report_from_previous_PRA();
 		previous.filter();
 		
+	}
+	@Test(priority = 3)
+	void Regulated_Pest_Test() throws InterruptedException
+	{
+		Regulated_Pest_list regulated=PageFactory.initElements(wd, Regulated_Pest_list.class);
+		regulated.add_pest();
+		regulated.edit_record();
+		regulated.cleanup_pest();
+		regulated.pagination();
+		regulated.regulated_filter();
 	}
 	
 	

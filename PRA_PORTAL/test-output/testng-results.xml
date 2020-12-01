@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-27T16:31:19 IST" name="Home Test" finished-at="2020-11-27T16:38:01 IST" duration-ms="401357">
+  <suite started-at="2020-12-01T19:53:04 IST" name="Home Test" finished-at="2020-12-01T19:59:41 IST" duration-ms="396316">
     <groups>
     </groups>
-    <test started-at="2020-11-27T16:31:19 IST" name="Home" finished-at="2020-11-27T16:38:01 IST" duration-ms="401357">
+    <test started-at="2020-12-01T19:53:04 IST" name="Home" finished-at="2020-12-01T19:59:41 IST" duration-ms="396316">
       <class name="pra_package.PRA_Home">
-        <test-method is-config="true" signature="initialization_browser_opening()[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-11-27T16:29:35 IST" name="initialization_browser_opening" finished-at="2020-11-27T16:31:19 IST" duration-ms="104618" status="PASS">
+        <test-method is-config="true" signature="initialization_browser_opening()[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-01T19:52:00 IST" name="initialization_browser_opening" finished-at="2020-12-01T19:53:04 IST" duration-ms="64668" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization_browser_opening -->
-        <test-method signature="title_verification()[pri:1, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-11-27T16:31:19 IST" name="title_verification" finished-at="2020-11-27T16:31:28 IST" duration-ms="9033" status="PASS">
+        <test-method signature="title_verification()[pri:1, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-01T19:53:04 IST" name="title_verification" finished-at="2020-12-01T19:53:13 IST" duration-ms="9033" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- title_verification -->
-        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-11-27T16:31:29 IST" name="fail_testcase" finished-at="2020-11-27T16:31:29 IST" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-01T19:53:13 IST" name="fail_testcase" finished-at="2020-12-01T19:53:13 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,11 +26,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method signature="login_Test()[pri:2, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-11-27T16:31:29 IST" name="login_Test" finished-at="2020-11-27T16:32:01 IST" duration-ms="32869" status="PASS">
+        <test-method signature="login_Test()[pri:2, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-01T19:53:13 IST" name="login_Test" finished-at="2020-12-01T19:53:44 IST" duration-ms="30769" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login_Test -->
-        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-11-27T16:32:01 IST" name="fail_testcase" finished-at="2020-11-27T16:32:01 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-01T19:53:44 IST" name="fail_testcase" finished-at="2020-12-01T19:53:44 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,22 +41,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method signature="Previous_PRA_Test()[pri:3, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-11-27T16:32:01 IST" name="Previous_PRA_Test" finished-at="2020-11-27T16:38:01 IST" duration-ms="359372" status="PASS">
+        <test-method signature="Regulated_Pest_Test()[pri:3, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-01T19:53:44 IST" name="Regulated_Pest_Test" finished-at="2020-12-01T19:59:41 IST" duration-ms="356440" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Previous_PRA_Test -->
-        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-11-27T16:38:01 IST" name="fail_testcase" finished-at="2020-11-27T16:38:01 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- Regulated_Pest_Test -->
+        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-01T19:59:41 IST" name="fail_testcase" finished-at="2020-12-01T19:59:41 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Previous_PRA_Test status=SUCCESS method=PRA_Home.Previous_PRA_Test()[pri:3, instance:pra_package.PRA_Home@35dab4eb] output={null}]]]>
+                <![CDATA[[TestResult name=Regulated_Pest_Test status=SUCCESS method=PRA_Home.Regulated_Pest_Test()[pri:3, instance:pra_package.PRA_Home@35dab4eb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method is-config="true" signature="teardown_browerclosing()[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-11-27T16:38:01 IST" name="teardown_browerclosing" finished-at="2020-11-27T16:38:02 IST" duration-ms="1086" status="PASS">
+        <test-method is-config="true" signature="teardown_browerclosing()[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-01T19:59:41 IST" name="teardown_browerclosing" finished-at="2020-12-01T19:59:42 IST" duration-ms="1139" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown_browerclosing -->
