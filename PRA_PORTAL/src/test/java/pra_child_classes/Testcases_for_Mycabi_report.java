@@ -10,6 +10,7 @@ public class Testcases_for_Mycabi_report extends My_cabi_account {
 		logger1=extent.createTest("CPC Login Test ");
 		logger2=extent.createTest("My Cabi Account Creation Test");
 		logger3=extent.createTest("Login Test with created account");
-		logger4=extent.createTest("Screenshot for failed Test");
+		logger4=extent.createTest("Mycabi tab");
+		logger5=extent.createTest("Screenshot for failed Test");
 	}
 }

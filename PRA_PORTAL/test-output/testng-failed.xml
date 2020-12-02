@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Home Test]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Home(failed)">
+<suite name="Failed suite [MyCABI Test]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="MYCABI account creation(failed)">
     <classes>
-      <class name="pra_package.PRA_Home">
+      <class name="pra_package.My_cabi_account">
         <methods>
-          <include name="Regulated_Pest_Test"/>
+          <include name="mycabi_tab"/>
           <include name="fail_testcase"/>
-          <include name="teardown_browerclosing"/>
           <include name="initialization_browser_opening"/>
+          <include name="teardown_browerclosing"/>
         </methods>
-      </class> <!-- pra_package.PRA_Home -->
+      </class> <!-- pra_package.My_cabi_account -->
     </classes>
-  </test> <!-- Home(failed) -->
-</suite> <!-- Failed suite [Home Test] -->
+  </test> <!-- MYCABI account creation(failed) -->
+</suite> <!-- Failed suite [MyCABI Test] -->

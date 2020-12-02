@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -110,9 +111,13 @@ public class mycabi_account_creation extends My_cabi_account{
 		Thread.sleep(5000);
 		
 	}
+	JavascriptExecutor jse=(JavascriptExecutor)wd;
 	@FindBy(xpath="//input[@id='UsernameEmail']")WebElement user_name;
 	@FindBy(xpath="//button[text()='Submit']")WebElement submit;
 	@FindBy(xpath="//li[@class='nav-item left-border right-border']//span[@class='icon-text']")WebElement signed_icon;
+	@FindBy(xpath="//input[@id='AcceptedTermsAndConditions']")WebElement checkbox1;
+	@FindBy(xpath="//input[@id='ShareAgreed']")WebElement checkbox2;
+	@FindBy(xpath="//input[@Value='Save']")WebElement save_button;
 	public void login_to_mycabi(String username,String Password) throws InterruptedException
 	{
 		user_name.clear();
@@ -139,6 +144,17 @@ public class mycabi_account_creation extends My_cabi_account{
 		String icon_text=signed_icon.getText();
 		System.out.println("Successfully "+icon_text);
 		logger3.log(Status.PASS, "Successfully "+icon_text);
+		Thread.sleep(2000);
+		jse.executeScript("window.scrollBy(0,900)", "");
+		Thread.sleep(2000);
+		checkbox1.click();
+		Thread.sleep(1000);
+		checkbox2.click();
+		Thread.sleep(1000);
+		save_button.click();
+		Thread.sleep(3000);
+		
+		
 		
 	}
 }

@@ -16,13 +16,14 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import config.PRA_Base;
 import library.Utility;
+import pra_child_classes.Mycabi_tab;
 import pra_child_classes.Testcases_for_Mycabi_report;
 import pra_child_classes.mycabi_account_creation;
 
 public class My_cabi_account extends PRA_Base {
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/mycabi.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5;
 	
 
 	@BeforeSuite
@@ -45,6 +46,13 @@ public class My_cabi_account extends PRA_Base {
 		mycabi_account_creation ac2=PageFactory.initElements(wd, mycabi_account_creation.class);
 		ac2.login_to_mycabi(getobject("email"),getobject("password"));
 	}
+	@Test(priority = 3)
+	void mycabi_tab() throws InterruptedException
+	{
+		Mycabi_tab mycabi=PageFactory.initElements(wd, Mycabi_tab.class);
+		mycabi.mycabi_account_edit();
+		mycabi.mycabi_delete();
+	}
 	
 	
 	@AfterMethod
@@ -55,8 +63,8 @@ public class My_cabi_account extends PRA_Base {
 			{
 			String temp=Utility.attachscreenshotreport(wd, result.getName());
 		
-			logger3.fail("Testcase name"+ result.getName());
-			logger3.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+			logger5.fail("Testcase name"+ result.getName());
+			logger5.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		    }}
 			catch(Exception e)
 			{
