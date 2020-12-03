@@ -6,7 +6,7 @@
       <class name="pra_package.PRA_Home">
         <methods>
           <include name="fail_testcase"/>
-          <include name="pathway_creation"/>
+          <include name="pestrisk"/>
           <include name="teardown_browerclosing"/>
           <include name="initialization_browser_opening"/>
         </methods>

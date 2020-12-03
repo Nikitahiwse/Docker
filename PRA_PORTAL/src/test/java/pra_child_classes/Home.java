@@ -1,7 +1,5 @@
 package pra_child_classes;
 
-import java.util.Set;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -44,19 +42,6 @@ public class Home extends PRA_Home{
 	@FindBy(xpath="//button[@class='close']")
 	WebElement close;
 	
-	/*
-	 * @FindBy(xpath="//input[@type='email']") WebElement emailid;
-	 * 
-	 * @FindBy(
-	 * xpath="//button[@type='button'][@class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc qIypjc TrZEUc']"
-	 * ) WebElement next_button;
-	 * 
-	 * @FindBy(name="password") WebElement pass;
-	 * 
-	 * @FindBy(
-	 * xpath="//button[@type='button'][@class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc qIypjc TrZEUc']"
-	 * ) WebElement next;
-	 */
 	
 
 	
@@ -101,49 +86,7 @@ public class Home extends PRA_Home{
 	
 	
 	
-		/*public void email_verification() throws Throwable
-		{
-			  String parent=wd.getWindowHandle();
-			  System.out.println("parent window id is:"+parent);
-			  System.out.println(wd.getTitle());
-			  
-			  wd.get("https://mail.google.com/");
-			//  wd.get("https://mail.google.com/mail/?ui=html");
-			  Thread.sleep(3000);
-			  
-			  Set<String> allwindows = wd.getWindowHandles();
-			  int count = allwindows.size();
-			  
-			  System.out.println("Total no of windows:"+count);
-			  
-			  for(String child : allwindows)
-			  {
-				 
-				  if(parent.equalsIgnoreCase(child))
-				  {
-					  wd.switchTo().window(child);
-					  Thread.sleep(3000);
-					  System.out.println("child window title is"+wd.getTitle());
-					  System.out.println("Child window id is:"+wd.getWindowHandles());
-					  
-					  emailid.sendKeys("shubhambhandari003@gmail.com");
-					  Thread.sleep(2000);
-					  next_button.click();
-					  
-					  pass.sendKeys("shivshakti123");
-					  Thread.sleep(2000);
-					  next.click();
-					 
-					  Thread.sleep(3000);
-					  //wd.close();
-				  }
-			  }
-			wd.switchTo().window(parent);
-			System.out.println("parent window title is:"+wd.getTitle());
-			
-			
-			 
-			  }*/
+		
 			  
 			 
 				}

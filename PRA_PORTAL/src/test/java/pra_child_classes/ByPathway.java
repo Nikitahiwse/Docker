@@ -55,7 +55,8 @@ public class ByPathway extends PRA_Home {
 	
 	//Group of pest
 	
-	@FindBy(xpath="//button[@type='button'][@class='btn btn-pra-red btn-generate-options btn-submit-form']")
+		
+	@FindBy(xpath="//button[@class='btn btn-pra-red btn-generate-options btn-submit-form' and text()='Select groups of pests']")
 	WebElement group_button;
 	
 	@FindBy(xpath="//*[@id=\"tblAllCategory\"]/tbody/tr[1]/td/div/label/span")

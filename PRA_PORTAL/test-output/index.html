@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\hp\AppData\Local\Temp\testng-eclipse--415395915\testng-customsuite.xml</span>
+                    <span>C:\Users\hp\AppData\Local\Temp\testng-eclipse-172716765\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +102,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pra_package.PRA_Home" hash-for-method="actions">actions</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pra_package.PRA_Home" hash-for-method="login_Test">login_Test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pra_package.PRA_Home" hash-for-method="pathway_creation">pathway_creation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pra_package.PRA_Home" hash-for-method="pestrisk">pestrisk</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -140,6 +150,13 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="actions">
+                  </a> <!-- actions -->
+                  <span class="method-name">actions</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="login_Test">
                   </a> <!-- login_Test -->
                   <span class="method-name">login_Test</span>
@@ -150,6 +167,13 @@
                   <a name="pathway_creation">
                   </a> <!-- pathway_creation -->
                   <span class="method-name">pathway_creation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="pestrisk">
+                  </a> <!-- pestrisk -->
+                  <span class="method-name">pestrisk</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -171,7 +195,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\hp\AppData\Local\Temp\testng-eclipse--415395915\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\hp\AppData\Local\Temp\testng-eclipse-172716765\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -220,28 +244,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'pathway_creation')
+data.setCell(0, 1, 'risk_assessments')
 data.setCell(0, 2, 'pra_package.PRA_Home')
-data.setCell(0, 3, 100480);
+data.setCell(0, 3, 112616);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'risk_assessments')
+data.setCell(1, 1, 'pathway_creation')
 data.setCell(1, 2, 'pra_package.PRA_Home')
-data.setCell(1, 3, 41112);
+data.setCell(1, 3, 95164);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'login_Test')
+data.setCell(2, 1, 'actions')
 data.setCell(2, 2, 'pra_package.PRA_Home')
-data.setCell(2, 3, 30424);
+data.setCell(2, 3, 94565);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'title_verification')
+data.setCell(3, 1, 'pestrisk')
 data.setCell(3, 2, 'pra_package.PRA_Home')
-data.setCell(3, 3, 9125);
+data.setCell(3, 3, 78105);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'login_Test')
+data.setCell(4, 2, 'pra_package.PRA_Home')
+data.setCell(4, 3, 25804);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'title_verification')
+data.setCell(5, 2, 'pra_package.PRA_Home')
+data.setCell(5, 3, 9026);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 6 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -274,39 +306,55 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">title_verification</span>
-                <span class="method-start">74410 ms</span>
+                <span class="method-start">53445 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">fail_testcase([TestResult name=title_verification status=SUCCESS method=PRA_Home.title_verification()[pri:1, insta...)</span>
-                <span class="method-start">83542 ms</span>
+                <span class="method-start">62477 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">login_Test</span>
-                <span class="method-start">83551 ms</span>
+                <span class="method-start">62486 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">fail_testcase([TestResult name=login_Test status=SUCCESS method=PRA_Home.login_Test()[pri:2, instance:pra_package....)</span>
-                <span class="method-start">113977 ms</span>
+                <span class="method-start">88292 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">pathway_creation</span>
-                <span class="method-start">113979 ms</span>
+                <span class="method-start">88294 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">fail_testcase([TestResult name=pathway_creation status=SUCCESS method=PRA_Home.pathway_creation()[pri:4, instance:...)</span>
-                <span class="method-start">214460 ms</span>
+                <span class="method-start">183460 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">risk_assessments</span>
-                <span class="method-start">214461 ms</span>
+                <span class="method-start">183461 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">fail_testcase([TestResult name=risk_assessments status=SUCCESS method=PRA_Home.risk_assessments()[pri:5, instance:...)</span>
-                <span class="method-start">255574 ms</span>
+                <span class="method-start">296080 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">actions</span>
+                <span class="method-start">296082 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">fail_testcase([TestResult name=actions status=SUCCESS method=PRA_Home.actions()[pri:6, instance:pra_package.PRA_Ho...)</span>
+                <span class="method-start">390649 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">pestrisk</span>
+                <span class="method-start">390650 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">fail_testcase([TestResult name=pestrisk status=SUCCESS method=PRA_Home.pestrisk()[pri:7, instance:pra_package.PRA_...)</span>
+                <span class="method-start">468758 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">teardown_browerclosing</span>
-                <span class="method-start">255604 ms</span>
+                <span class="method-start">468804 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

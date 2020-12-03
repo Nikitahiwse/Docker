@@ -15,7 +15,9 @@ public void testcase_creation()
 	logger5=extent.createTest("Team creation Test");
 	logger6=extent.createTest("By Pathway Test");
 	Logger7=extent.createTest("Pathway Risk Assessments");
-	Logger8=extent.createTest("Screenshot for failed testcase");
+	Logger8=extent.createTest("User Action");
+	Logger9=extent.createTest("Pest Risk Management");
+	Logger10=extent.createTest("Screenshot for failed testcase");
 	
 }
 }
