@@ -18,6 +18,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import config.PRA_Base;
 import library.Utility;
 import pra_child_classes.Banner_footer_PRA;
+import pra_child_classes.ByPest_initiation;
 import pra_child_classes.Home;
 import pra_child_classes.Login;
 import pra_child_classes.PRA_Home_tab;
@@ -94,7 +95,7 @@ public class PRA_Home extends PRA_Base{
 		previous.filter();
 		
 	}
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	void Regulated_Pest_Test() throws InterruptedException
 	{
 		Regulated_Pest_list regulated=PageFactory.initElements(wd, Regulated_Pest_list.class);
@@ -104,8 +105,13 @@ public class PRA_Home extends PRA_Base{
 		regulated.pagination();
 		regulated.regulated_filter();
 	}
-	
-	
+	@Test(priority = 3)
+	void By_pest_initiation() throws InterruptedException, IOException
+	{
+		ByPest_initiation bypest=PageFactory.initElements(wd, ByPest_initiation.class);
+		bypest.By_pest_initiation_pra(getobject("pestname"),getobject("country_area_at_risk"),getobject("suggested_title_for_pra"),getobject("pra_start_month"),getobject("pra_start_date"),getobject("pra_due_month"),getobject("pra_due_date"),getobject("pra_area"));
+	    bypest.re_edit_initiation_form(getobject("suggested_title_for_pra"));
+	}
 	@AfterMethod
 	void fail_testcase(ITestResult result)
 	{

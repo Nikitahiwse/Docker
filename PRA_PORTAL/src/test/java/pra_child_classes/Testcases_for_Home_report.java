@@ -15,7 +15,7 @@ public void testcase_creation()
 	logger7=extent.createTest("PRA_Home_Test");
 	logger8=extent.createTest("My teams Previous PRA's");
 	logger9=extent.createTest("My teams reulated pest List");
-	logger10=extent.createTest("My Cabi");
+	logger10=extent.createTest("By Pest initiation");
 	logger11=extent.createTest("Screenshot for failed testcase");
 	
 }

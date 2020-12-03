@@ -25,7 +25,9 @@ public class PRA_Base
 		
 		InputStream input2=new FileInputStream("E:\\CABI\\PRA_PORTAL\\src\\test\\java\\config\\mycabi.properties");
 		prop.load(input2);
-	  
+		
+		InputStream input4=new FileInputStream("E:\\CABI\\PRA_PORTAL\\src\\test\\java\\config\\By_pest.properties");
+		prop.load(input4);
 	     } catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

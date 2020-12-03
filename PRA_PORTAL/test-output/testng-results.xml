@@ -2,65 +2,65 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-02T11:43:54 IST" name="MyCABI Test" finished-at="2020-12-02T11:45:20 IST" duration-ms="85264">
+  <suite started-at="2020-12-03T20:27:23 IST" name="Home Test" finished-at="2020-12-03T20:29:33 IST" duration-ms="129674">
     <groups>
     </groups>
-    <test started-at="2020-12-02T11:43:54 IST" name="MYCABI account creation" finished-at="2020-12-02T11:45:20 IST" duration-ms="85264">
-      <class name="pra_package.My_cabi_account">
-        <test-method is-config="true" signature="initialization_browser_opening()[pri:0, instance:pra_package.My_cabi_account@8519cb4]" started-at="2020-12-02T11:42:48 IST" name="initialization_browser_opening" finished-at="2020-12-02T11:43:54 IST" duration-ms="66891" status="PASS">
+    <test started-at="2020-12-03T20:27:23 IST" name="Home" finished-at="2020-12-03T20:29:33 IST" duration-ms="129674">
+      <class name="pra_package.PRA_Home">
+        <test-method is-config="true" signature="initialization_browser_opening()[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-03T20:26:21 IST" name="initialization_browser_opening" finished-at="2020-12-03T20:27:23 IST" duration-ms="62224" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization_browser_opening -->
-        <test-method signature="account_creation()[pri:1, instance:pra_package.My_cabi_account@8519cb4]" started-at="2020-12-02T11:43:54 IST" name="account_creation" finished-at="2020-12-02T11:44:35 IST" duration-ms="40137" status="PASS">
+        <test-method signature="title_verification()[pri:1, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-03T20:27:23 IST" name="title_verification" finished-at="2020-12-03T20:27:32 IST" duration-ms="9029" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- account_creation -->
-        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.My_cabi_account@8519cb4]" started-at="2020-12-02T11:44:35 IST" name="fail_testcase" finished-at="2020-12-02T11:44:35 IST" duration-ms="6" status="PASS">
+        </test-method> <!-- title_verification -->
+        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-03T20:27:32 IST" name="fail_testcase" finished-at="2020-12-03T20:27:32 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=account_creation status=SUCCESS method=My_cabi_account.account_creation()[pri:1, instance:pra_package.My_cabi_account@8519cb4] output={null}]]]>
+                <![CDATA[[TestResult name=title_verification status=SUCCESS method=PRA_Home.title_verification()[pri:1, instance:pra_package.PRA_Home@35dab4eb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method signature="login_with_created_account()[pri:2, instance:pra_package.My_cabi_account@8519cb4]" started-at="2020-12-02T11:44:35 IST" name="login_with_created_account" finished-at="2020-12-02T11:44:54 IST" duration-ms="18910" status="PASS">
+        <test-method signature="login_Test()[pri:2, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-03T20:27:32 IST" name="login_Test" finished-at="2020-12-03T20:28:01 IST" duration-ms="29419" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login_with_created_account -->
-        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.My_cabi_account@8519cb4]" started-at="2020-12-02T11:44:54 IST" name="fail_testcase" finished-at="2020-12-02T11:44:54 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- login_Test -->
+        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-03T20:28:01 IST" name="fail_testcase" finished-at="2020-12-03T20:28:01 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=login_with_created_account status=SUCCESS method=My_cabi_account.login_with_created_account()[pri:2, instance:pra_package.My_cabi_account@8519cb4] output={null}]]]>
+                <![CDATA[[TestResult name=login_Test status=SUCCESS method=PRA_Home.login_Test()[pri:2, instance:pra_package.PRA_Home@35dab4eb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method signature="mycabi_tab()[pri:3, instance:pra_package.My_cabi_account@8519cb4]" started-at="2020-12-02T11:44:54 IST" name="mycabi_tab" finished-at="2020-12-02T11:45:20 IST" duration-ms="26142" status="PASS">
+        <test-method signature="By_pest_initiation()[pri:3, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-03T20:28:01 IST" name="By_pest_initiation" finished-at="2020-12-03T20:29:32 IST" duration-ms="91154" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- mycabi_tab -->
-        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.My_cabi_account@8519cb4]" started-at="2020-12-02T11:45:20 IST" name="fail_testcase" finished-at="2020-12-02T11:45:20 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- By_pest_initiation -->
+        <test-method is-config="true" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-03T20:29:32 IST" name="fail_testcase" finished-at="2020-12-03T20:29:33 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=mycabi_tab status=SUCCESS method=My_cabi_account.mycabi_tab()[pri:3, instance:pra_package.My_cabi_account@8519cb4] output={null}]]]>
+                <![CDATA[[TestResult name=By_pest_initiation status=SUCCESS method=PRA_Home.By_pest_initiation()[pri:3, instance:pra_package.PRA_Home@35dab4eb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method is-config="true" signature="teardown_browerclosing()[pri:0, instance:pra_package.My_cabi_account@8519cb4]" started-at="2020-12-02T11:45:20 IST" name="teardown_browerclosing" finished-at="2020-12-02T11:45:20 IST" duration-ms="686" status="PASS">
+        <test-method is-config="true" signature="teardown_browerclosing()[pri:0, instance:pra_package.PRA_Home@35dab4eb]" started-at="2020-12-03T20:29:33 IST" name="teardown_browerclosing" finished-at="2020-12-03T20:29:33 IST" duration-ms="678" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown_browerclosing -->
-      </class> <!-- pra_package.My_cabi_account -->
-    </test> <!-- MYCABI account creation -->
-  </suite> <!-- MyCABI Test -->
+      </class> <!-- pra_package.PRA_Home -->
+    </test> <!-- Home -->
+  </suite> <!-- Home Test -->
 </testng-results>
