@@ -13,10 +13,10 @@ public void testcase_creation()
 	logger3=extent.createTest("Banner Test");
 	logger4=extent.createTest("Footer Test");
 	logger5=extent.createTest("Team creation Test");
-	logger6=extent.createTest("By Pathway Test");
-	Logger7=extent.createTest("Pathway Risk Assessments");
-	Logger8=extent.createTest("User Action");
-	Logger9=extent.createTest("Pest Risk Management");
+	logger6=extent.createTest("By Pathway Test");           //9 se start hoga
+	Logger7=extent.createTest("Pathway Risk Assessments");  //10
+	Logger8=extent.createTest("User Action");               //11
+	Logger9=extent.createTest("Pest Risk Management");      //12   to 16
 	Logger10=extent.createTest("Screenshot for failed testcase");
 	
 }

@@ -58,6 +58,10 @@ public class PestRisk_Management extends PRA_Home {
 	@FindBy(xpath="//button//span[text()='Log in']") 
 	WebElement login;
 	
+	@FindBy(xpath="//a[@class='k-button k-bare k-button-icon k-window-action']")
+	//@FindBy(xpath = "/html/body/div[8]/div[1]/div/a")
+	WebElement close;
+	
 	
 	
 	
@@ -151,6 +155,8 @@ public class PestRisk_Management extends PRA_Home {
 					wd.switchTo().window(parent);
 					System.out.println("parent window title is:"+wd.getTitle());
 					
+					Thread.sleep(3000);
+					close.click();
 					Thread.sleep(5000);
 					
 					
