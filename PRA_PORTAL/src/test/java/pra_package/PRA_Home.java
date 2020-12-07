@@ -18,7 +18,9 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import config.PRA_Base;
 import library.Utility;
 import pra_child_classes.Banner_footer_PRA;
+import pra_child_classes.ByPest_categorization;
 import pra_child_classes.ByPest_initiation;
+import pra_child_classes.Delete_bypest_pra;
 import pra_child_classes.Home;
 import pra_child_classes.Login;
 import pra_child_classes.PRA_Home_tab;
@@ -31,7 +33,7 @@ public class PRA_Home extends PRA_Base{
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7,logger8,logger9,logger10,logger11;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7,logger8,logger9,logger10,logger11,logger18,logger25,logger26;
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
@@ -54,13 +56,8 @@ public class PRA_Home extends PRA_Base{
         log.login_to_cpc(getobject("cpc_username"),getobject("cpc_password"));
 	    log.login_to_mycabi(getobject("mycabi_username"),getobject("mycabi_password"));
 	}
-	//@Test(priority=3)
-	void cleanup() throws InterruptedException
-	{
-		Home ho=PageFactory.initElements(wd, Home.class);
-		ho.cleanup_team();
-		
-	}
+
+	
 	//@Test(priority=3)
 	void Team_creation() throws Throwable
 	{
@@ -112,6 +109,20 @@ public class PRA_Home extends PRA_Base{
 		bypest.By_pest_initiation_pra(getobject("pestname"),getobject("country_area_at_risk"),getobject("suggested_title_for_pra"),getobject("pra_start_month"),getobject("pra_start_date"),getobject("pra_due_month"),getobject("pra_due_date"),getobject("pra_area"));
 	    bypest.re_edit_initiation_form(getobject("suggested_title_for_pra"));
 	}
+	@Test(priority = 4)
+	void By_pest_cattegorization_tab() throws InterruptedException, IOException
+	{
+		ByPest_categorization bypestcat=PageFactory.initElements(wd, ByPest_categorization.class);
+		bypestcat.categorization(getobject("suggested_title_for_pra"));
+	}
+	@Test(priority = 5)
+	void  By_pest_delete_PRA() throws InterruptedException
+	{
+		Delete_bypest_pra deletePRA=PageFactory.initElements(wd, Delete_bypest_pra.class);
+		deletePRA.delete_PRA();
+	}
+	
+	
 	@AfterMethod
 	void fail_testcase(ITestResult result)
 	{

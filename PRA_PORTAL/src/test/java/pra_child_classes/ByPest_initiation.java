@@ -180,6 +180,7 @@ public class ByPest_initiation extends PRA_Home{
 	@FindBy(xpath="//div[@class='noneditable-overlay non-editable']")WebElement non_editable;
 	@FindBy(xpath="//p[@class='non-editable-message']")WebElement non_editable_popup;
 	@FindBy(xpath="//button[text()='Ok']")WebElement ok_button;
+	@FindBy(linkText = "Home")WebElement home;
 	public void re_edit_initiation_form(String createdpra) throws InterruptedException
 	{
 		logger10.log(Status.PASS, "-----------------Re-edit By pest initiation form----------------");
@@ -199,7 +200,9 @@ public class ByPest_initiation extends PRA_Home{
 		String non_editable_popup_text=non_editable_popup.getText();
 		logger10.log(Status.PASS," Popup message is- "+non_editable_popup_text);
 		ok_button.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
+		home.click();
+		Thread.sleep(3000);
 		
 	}
 	
