@@ -166,28 +166,35 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	public void rapid_assessments() throws Throwable {
 		Thread.sleep(3000);
 		select_assessment.click();
-		Logger7.log(Status.PASS, "Assessment selected(Peach twig borer)");
+		Logger10.log(Status.PASS, "Assessment selected(Peach twig borer)");
+		
 		Thread.sleep(3000);
 		rapid_assessment.click();
-		Logger7.log(Status.PASS, "Rapid Assessment button clicked successfully");
+		Logger10.log(Status.PASS, "Rapid Assessment button clicked successfully");
+		
 		Thread.sleep(2000);
 		potential_for_establishment_option.click();
-		Logger7.log(Status.PASS, "Clicked On First Option");
+		Logger10.log(Status.PASS, "Clicked On First Option");
+		
 		Select s1= new Select(option_1);
 		s1.selectByValue("2");
-		Logger7.log(Status.PASS, "No Option Selected");
+		Logger10.log(Status.PASS, "No Option Selected");
+		
 		Thread.sleep(3000);
 		potential_for_economic_option.click();
-		Logger7.log(Status.PASS, "Clicked on Second Option");
+		Logger10.log(Status.PASS, "Clicked on Second Option");
+		
 		Select s2= new Select(option_2);
 		s2.selectByValue("2");
-		Logger7.log(Status.PASS, "No Option Selected");
+		Logger10.log(Status.PASS, "No Option Selected");
+		
 		Thread.sleep(3000);
 		save.click();
-		Logger7.log(Status.PASS, "Save Button Clicked successfully");
+		Logger10.log(Status.PASS, "Save Button Clicked successfully");
+		
 		Thread.sleep(3000);
 		not_required.click();
-		Logger7.log(Status.PASS, "Full risk assessment is not required");
+		Logger10.log(Status.PASS, "Full risk assessment is not required");
 		
 	
 		
@@ -195,26 +202,32 @@ public class Pathway_RiskAssessments extends PRA_Home{
 		
 		Thread.sleep(3000);
 		select_black_borer.click();
-		Logger7.log(Status.PASS, " Apate monachus Assessment selected(black borer)");
+		Logger10.log(Status.PASS, " Apate monachus Assessment selected(black borer)");
+		
 		Thread.sleep(2000);
 		rapid_assessment_button.click();
-		Logger7.log(Status.PASS, "Rapid Assessment button clicked successfully");
+		Logger10.log(Status.PASS, "Rapid Assessment button clicked successfully");
+		
 		Thread.sleep(2000);
 		potential_for_establishment_spread_option.click();
 		Select potential = new Select(select_option_1);
 		potential.selectByValue("1");
-		Logger7.log(Status.PASS, "Yes Option Selected");
+		Logger10.log(Status.PASS, "Yes Option Selected");
+		
 		Thread.sleep(3000);
 		potential_for_environmental_option.click();
 		Select environmental = new Select(select_option_2);
 		environmental.selectByValue("1");
-		Logger7.log(Status.PASS, "Yes Option Selected");
+		Logger10.log(Status.PASS, "Yes Option Selected");
+		
 		Thread.sleep(3000);
 		save_button.click();
-		Logger7.log(Status.PASS, "Save Button Clicked successfully");
+		Logger10.log(Status.PASS, "Save Button Clicked successfully");
+		
 		Thread.sleep(3000);
 		No.click();
-		Logger7.log(Status.PASS, "Full PRA not required");
+		Logger10.log(Status.PASS, "Full PRA not required");
+		
 		Thread.sleep(5000);
 		
 		
@@ -226,80 +239,99 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	{
 		Thread.sleep(3000);
 		Apate_monachus_assessment.click();
-		Logger7.log(Status.PASS, " Apate monachus Assessment selected(black borer)");
+		Logger10.log(Status.PASS, " Apate monachus Assessment selected(black borer)");
+		
 		Thread.sleep(3000);
 		Full_Assessment.click();
-		Logger7.log(Status.PASS, " Full Assessment Button Clicked Successfully ");
+		Logger10.log(Status.PASS, " Full Assessment Button Clicked Successfully ");
+		
 		Thread.sleep(5000);
 		probability_of_pest_1.click();
 		Select r= new Select(rating_1);
 		r.selectByValue("3");
-		Logger7.log(Status.PASS, " Rating selected Successfully ");
+		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
 		Thread.sleep(2000);
 		probability_of_pest_2.click();
 		Select rating= new Select(rating_2);
 		rating.selectByValue("2");
-		Logger7.log(Status.PASS, " Rating selected Successfully ");
+		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
 		Thread.sleep(5000);
 		save_button_entrypage.click();
-		Logger7.log(Status.PASS, " Information Saved Successfully ");
+		Logger10.log(Status.PASS, " Information Saved Successfully ");
+		
 		Thread.sleep(3000);
 		next1.click();
-		Logger7.log(Status.PASS, " Next Button Got Clicked Successfully ");
+		Logger10.log(Status.PASS, " Next Button Got Clicked Successfully ");
+		
 		Thread.sleep(3000);
 		vector1.click();
 		Select v= new Select(select_vector_1);
 		v.selectByValue("2");
-		Logger7.log(Status.PASS, " Rating selected Successfully ");
+		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
 		Thread.sleep(3000);
 		vector2.click();
 		Select vector= new Select(select_vector_2);
 		vector.selectByValue("1");
-		Logger7.log(Status.PASS, " Rating selected Successfully ");
+		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
 		Thread.sleep(3000);
 		save_button_establishment.click();
-		Logger7.log(Status.PASS, " Information Saved Successfully ");
+		Logger10.log(Status.PASS, " Information Saved Successfully ");
+		
 		Thread.sleep(3000);
 		next2.click();
-		Logger7.log(Status.PASS, " Next Button Got Clicked Successfully ");
+		Logger10.log(Status.PASS, " Next Button Got Clicked Successfully ");
+		
 		Thread.sleep(3000);
 		probability_rate_spread.click();
 		Select spread= new Select(select_rate_spread_1);
 		spread.selectByValue("2");
-		Logger7.log(Status.PASS, " Rating selected Successfully ");
+		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
 		Thread.sleep(3000);
 		probability_spread.click();
 		Select spread_rate= new Select(select_rate_spread_2);
 		spread_rate.selectByValue("2");
-		Logger7.log(Status.PASS, " Rating selected Successfully ");
+		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
 		Thread.sleep(3000);
 		save_spread.click();
-		Logger7.log(Status.PASS, " Information Saved Successfully ");
+		Logger10.log(Status.PASS, " Information Saved Successfully ");
+		
 		Thread.sleep(3000);
 		next3.click();
-		Logger7.log(Status.PASS, " Next Button Got Clicked Successfully ");
+		Logger10.log(Status.PASS, " Next Button Got Clicked Successfully ");
+		
 		Thread.sleep(5000);
 		economic_loss.click();
 		Select economic= new Select(loss_1);
 		economic.selectByValue("2");
-		Logger7.log(Status.PASS, " Rating selected Successfully ");
+		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
 		Thread.sleep(3000);
 		eco_loss.click();
 		Select economic1= new Select(loss_2);
 		economic1.selectByValue("2");
-		Logger7.log(Status.PASS, " Rating selected Successfully ");
+		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
 		Thread.sleep(3000);
 		save_4.click();
-		Logger7.log(Status.PASS, " Information Saved Successfully ");
+		Logger10.log(Status.PASS, " Information Saved Successfully ");
+		
 		Thread.sleep(3000);
 		next4.click();
-		Logger7.log(Status.PASS, " Next Button Got Clicked Successfully ");
+		Logger10.log(Status.PASS, " Next Button Got Clicked Successfully ");
+		
 		Thread.sleep(3000);
 		yes.click();
-		Logger7.log(Status.PASS, "phytosanitary measures selected to yes");
+		Logger10.log(Status.PASS, "phytosanitary measures selected to yes");
+		
 		Thread.sleep(3000);
 		save_return_pestlist.click();
-		Logger7.log(Status.PASS, "Saved and Return to pest list button Clicked successfully");
+		Logger10.log(Status.PASS, "Saved and Return to pest list button Clicked successfully");
 		
 		
 		

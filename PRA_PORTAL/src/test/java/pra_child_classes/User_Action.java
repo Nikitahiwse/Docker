@@ -141,23 +141,23 @@ public class User_Action extends PRA_Home {
 	{
 		Thread.sleep(3000);
 		Risk_Assessment_Filter.click();
-		Logger8.log(Status.PASS, "Risk Assessment Tab Filter Clicked Successfilly");
+		Logger11.log(Status.PASS, "Risk Assessment Tab Filter Clicked Successfilly");
 		
 		Thread.sleep(2000);
 		select_filter.click();
-		Logger8.log(Status.PASS, "Risk Assessment Tab Filter should be Clicked and Option Should be got Selected");
+		Logger11.log(Status.PASS, "Risk Assessment Tab Filter should be Clicked and Option Should be got Selected");
 		
 		Thread.sleep(3000);
 		Filter_Button.click();
-		Logger8.log(Status.PASS, "Risk Assessment Tab Filter Button Clicked Successfilly");	
+		Logger11.log(Status.PASS, "Risk Assessment Tab Filter Button Clicked Successfilly");	
 		
 		Thread.sleep(5000);
 		next_page.click();
-		Logger8.log(Status.PASS, "It should moved to next page");
+		Logger11.log(Status.PASS, "It should moved to next page");
 		
 		Thread.sleep(3000);
 		previous_page.click();
-		Logger8.log(Status.PASS, "It should moved to Previous page");
+		Logger11.log(Status.PASS, "It should moved to Previous page");
 		
 	
 	}
@@ -166,65 +166,65 @@ public class User_Action extends PRA_Home {
 	{
 		Thread.sleep(3000);
 		useraction_menu.click();
-		Logger8.log(Status.PASS, "User Action Menu Should Get Clicked");
+		Logger11.log(Status.PASS, "User Action Menu Should Get Clicked");
 		
 		Thread.sleep(3000);
 		export_dodder.click();
-		Logger8.log(Status.PASS, "Export Assessment Option should be clicked");
+		Logger11.log(Status.PASS, "Export Assessment Option should be clicked");
 		
 		Thread.sleep(3000);
 		download_template_dodder.click();
-		Logger8.log(Status.PASS, "Export Assessment Option should be clicked And Template Should be Downloaded");
+		Logger11.log(Status.PASS, "Export Assessment Option should be clicked And Template Should be Downloaded");
 		
 		Thread.sleep(2000);
 		close_dodder.click();
 		
 		Thread.sleep(3000);
 		apple_leaf_usermenu.click();
-		Logger8.log(Status.PASS, "User Action Menu Should Get Clicked");
+		Logger11.log(Status.PASS, "User Action Menu Should Get Clicked");
 		
 		Thread.sleep(3000);
 		import_assessment.click();
-		Logger8.log(Status.PASS, "Import Assessment Option should be clicked");
+		Logger11.log(Status.PASS, "Import Assessment Option should be clicked");
 		
 		Thread.sleep(3000);
 		choose_file.sendKeys("C:\\Users\\hp\\Downloads\\Wordform template for Cuscuta reflexa (dodder) (4).docx");
-		Logger8.log(Status.PASS, "File Path Passed");
+		Logger11.log(Status.PASS, "File Path Passed");
 		
 		Thread.sleep(5000);
 		import_on_leaf_upload.click();        // wrong file upload
-		Logger8.log(Status.PASS, "Upload Button should be clicked");
+		Logger11.log(Status.PASS, "Upload Button should be clicked");
 		
 		Thread.sleep(5000);
 		continue_warning.click();
-		Logger8.log(Status.PASS, "Before Clicking On Continue Warning Should Be Displayed");
+		Logger11.log(Status.PASS, "Before Clicking On Continue Warning Should Be Displayed");
 		
 		Thread.sleep(5000);
 		ok.click();
-		Logger8.log(Status.PASS, "Once Uploaded Ok Button Should be clicked");
+		Logger11.log(Status.PASS, "Once Uploaded Ok Button Should be clicked");
 		
 		Thread.sleep(2000);
 		close.click();
 		
 		Thread.sleep(4000);
 		dodder_menu.click();
-		Logger8.log(Status.PASS, "User Action Menu Should Get Clicked");
+		Logger11.log(Status.PASS, "User Action Menu Should Get Clicked");
 		
 		Thread.sleep(3000);
 		import_correct_file.click();
-		Logger8.log(Status.PASS, "Import Assessment Option should be clicked");
+		Logger11.log(Status.PASS, "Import Assessment Option should be clicked");
 		
 		Thread.sleep(3000);
 		choose_correctfile_import.sendKeys("C:\\Users\\hp\\Downloads\\Wordform template for Cuscuta reflexa (dodder) (4).docx");
-		Logger8.log(Status.PASS, "File path Should Be Passed Which we Want to Upload");
+		Logger11.log(Status.PASS, "File path Should Be Passed Which we Want to Upload");
 		
 		Thread.sleep(5000);
 		correctfile_upload.click();
-		Logger8.log(Status.PASS, "Upload Button Should Get Clicked");
+		Logger11.log(Status.PASS, "Upload Button Should Get Clicked");
 		
 		Thread.sleep(5000);
 		continue_upload.click();
-		Logger8.log(Status.PASS, "Before Clicking On Continue Warning Should Be Displayed");
+		Logger11.log(Status.PASS, "Before Clicking On Continue Warning Should Be Displayed");
 		
 		Thread.sleep(5000);
 		close1.click();
@@ -235,12 +235,13 @@ public class User_Action extends PRA_Home {
 		Thread.sleep(5000);
 		
 		//Drosophila suzukii (spotted wing drosophila)
+		
 		assessment.click();
-		Logger8.log(Status.PASS, "Click on user assessment");
+		Logger11.log(Status.PASS, "Click on user assessment");
 		
 		Thread.sleep(3000);
 		exclude_assessment.click();
-		Logger8.log(Status.PASS, "It should be clicked on exclude assessment button");
+		Logger11.log(Status.PASS, "It should be clicked on exclude assessment button");
 		
 		Thread.sleep(3000);
 		select_clicked.click();
@@ -248,23 +249,23 @@ public class User_Action extends PRA_Home {
 		Thread.sleep(3000);
 		Select exclude= new Select(exclude_reson);
 		exclude.selectByValue("5");
-		Logger8.log(Status.PASS, "Reson should be selected before excluding");
+		Logger11.log(Status.PASS, "Reson should be selected before excluding");
 		
 		Thread.sleep(2000);
 		notes.sendKeys("Absent in country");
-		Logger8.log(Status.PASS, "Note should be entered");
+		Logger11.log(Status.PASS, "Note should be entered");
 		
 		Thread.sleep(3000);
 		save.click();
-		Logger8.log(Status.PASS, "Save button should be clicked");
+		Logger11.log(Status.PASS, "Save button should be clicked");
 		
 		Thread.sleep(4000);
 		Frankliniella_useraction.click();
-		Logger8.log(Status.PASS, "Click on Franklinieela assessment user action");
+		Logger11.log(Status.PASS, "Click on Franklinieela assessment user action");
 		
 		Thread.sleep(3000);
 		Add_regulatory_status.click();
-		Logger8.log(Status.PASS, "User should be able to add regulatory status");
+		Logger11.log(Status.PASS, "User should be able to add regulatory status");
 		
 		Thread.sleep(3000);
 		regulatory_status.click();
@@ -272,27 +273,27 @@ public class User_Action extends PRA_Home {
 		Thread.sleep(3000);
 		Select status= new Select(select_regulatory_status);
 		status.selectByValue("2");
-		Logger8.log(Status.PASS, "User should be able to select regulatory satus");
+		Logger11.log(Status.PASS, "User should be able to select regulatory satus");
 		
 		Thread.sleep(3000);
 		save_regulatory_status.click();
-		Logger8.log(Status.PASS, "Once selected regulatory status it should get saved");
+		Logger11.log(Status.PASS, "Once selected regulatory status it should get saved");
 		
 		Thread.sleep(4000);
 		Frankliniella_useraction_again_click.click();
-		Logger8.log(Status.PASS, "it shold click on frankliniella usser action button");
+		Logger11.log(Status.PASS, "it shold click on frankliniella usser action button");
 		
 		Thread.sleep(3000);
 		add_notes.click();
-		Logger8.log(Status.PASS, "User should be able to click on add notes button");
+		Logger11.log(Status.PASS, "User should be able to click on add notes button");
 		
 		Thread.sleep(2000);
 		write_note.sendKeys("xyz");
-		Logger8.log(Status.PASS, "user should be able to add note");
+		Logger11.log(Status.PASS, "user should be able to add note");
 		
 		Thread.sleep(3000);
 		Save_frankliniella_note.click();
-		Logger8.log(Status.PASS, "After entering note it shold clicked on save button");
+		Logger11.log(Status.PASS, "After entering note it shold clicked on save button");
 		
 		Thread.sleep(5000);
 	}

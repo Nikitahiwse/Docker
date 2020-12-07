@@ -31,7 +31,7 @@ public class PRA_Home extends PRA_Base{
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,Logger7,Logger8,Logger9,Logger10;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,Logger7,Logger8,Logger9,Logger10,Logger11,Logger12,Logger13;
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
@@ -117,6 +117,7 @@ public class PRA_Home extends PRA_Base{
 	{
 		PestRisk_Management pest= PageFactory.initElements(wd, PestRisk_Management.class);
 		pest.pest_management(getobject("cpc_username"),getobject("cpc_password"));
+		pest.risk_management();
 	}
 	
 	
@@ -129,8 +130,8 @@ public class PRA_Home extends PRA_Base{
 			{
 			String temp=Utility.attachscreenshotreport(wd, result.getName());
 		
-			Logger10.fail("Testcase name"+ result.getName());
-			Logger10.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+			Logger13.fail("Testcase name"+ result.getName());
+			Logger13.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		    }}
 			catch(Exception e)
 			{
