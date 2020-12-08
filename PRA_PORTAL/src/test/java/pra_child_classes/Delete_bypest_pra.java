@@ -13,13 +13,19 @@ public class Delete_bypest_pra extends PRA_Home{
 	static JavascriptExecutor jse=(JavascriptExecutor)wd;
 	@FindBy(linkText = "0_automation_PRA")WebElement team;
 	@FindBy(xpath="//div[@id='RecentPRADatagrid']//tr[1]//td[9]//a[text()='Delete']")WebElement delete_button;
-	public void delete_PRA() throws InterruptedException
+	@FindBy(xpath="//div[@id='RecentPRADatagrid']//tr[1]//td[3]//a")WebElement createdPRA;
+	public void delete_PRA(String PRA) throws InterruptedException
 	{
 		
 		team.click();
 		Thread.sleep(3000);
 		jse.executeScript("window.scrollBy(0,400)", "");
 		Thread.sleep(3000);
+		
+		 String CreatedPra_name=createdPRA.getText();
+		 Thread.sleep(2000);
+		 if(CreatedPra_name.equalsIgnoreCase(PRA))
+	    {
 		delete_button.click();
 		Thread.sleep(1000);
 		logger25.log(Status.PASS, "Delete butoon got clicked");
@@ -28,6 +34,13 @@ public class Delete_bypest_pra extends PRA_Home{
 		logger25.log(Status.PASS, "PRA is deleted successfully");
 		System.out.println("PRA is deleted successfully");
 		Thread.sleep(2000);
+		 }
+		 
+		 else
+		 {
+			 System.out.println(PRA+" is not present in 0_automation_PRA team");
+		 }
+		 
 	}
 
 }

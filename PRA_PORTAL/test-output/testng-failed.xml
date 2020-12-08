@@ -5,8 +5,10 @@
     <classes>
       <class name="pra_package.PRA_Home">
         <methods>
+          <include name="By_pest_Probabity_of_entry"/>
           <include name="fail_testcase"/>
           <include name="By_pest_cattegorization_tab"/>
+          <include name="By_pest_initiation"/>
           <include name="teardown_browerclosing"/>
           <include name="initialization_browser_opening"/>
         </methods>

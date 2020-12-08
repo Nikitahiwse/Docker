@@ -17,6 +17,7 @@ public void testcase_creation()
 	logger9=extent.createTest("My teams reulated pest List");
 	logger10=extent.createTest("By Pest initiation");
 	logger18=extent.createTest("By Pest Categorization Tab Test");
+	logger19=extent.createTest("By Pest Probability of entry and Add pathway Test");
 	logger25=extent.createTest("Delete By Pest PRA Test");
 	logger26=extent.createTest("Screenshot for failed testcase");
 	

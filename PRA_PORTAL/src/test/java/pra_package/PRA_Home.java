@@ -20,6 +20,7 @@ import library.Utility;
 import pra_child_classes.Banner_footer_PRA;
 import pra_child_classes.ByPest_categorization;
 import pra_child_classes.ByPest_initiation;
+import pra_child_classes.Bypest_Probability_of_entry;
 import pra_child_classes.Delete_bypest_pra;
 import pra_child_classes.Home;
 import pra_child_classes.Login;
@@ -33,7 +34,7 @@ public class PRA_Home extends PRA_Base{
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7,logger8,logger9,logger10,logger11,logger18,logger25,logger26;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7,logger8,logger9,logger10,logger18,logger19,logger25,logger26;
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
@@ -116,10 +117,22 @@ public class PRA_Home extends PRA_Base{
 		bypestcat.categorization(getobject("suggested_title_for_pra"));
 	}
 	@Test(priority = 5)
-	void  By_pest_delete_PRA() throws InterruptedException
+	void By_pest_Probabity_of_entry() throws InterruptedException, IOException
+	{
+	Bypest_Probability_of_entry probability=PageFactory.initElements(wd, Bypest_Probability_of_entry.class);
+	probability.riskassesmenttab(getobject("suggested_title_for_pra"));
+	probability.add_pathway("Plants for planting");
+	probability.check_tab_risk_management("Plants for planting");
+	probability.add_pathway("Seeds for planting");
+	probability.check_tab_risk_management("Seeds for planting");
+	
+		
+	}
+	@Test(priority = 6)
+	void  By_pest_delete_PRA() throws InterruptedException, IOException
 	{
 		Delete_bypest_pra deletePRA=PageFactory.initElements(wd, Delete_bypest_pra.class);
-		deletePRA.delete_PRA();
+		deletePRA.delete_PRA(getobject("suggested_title_for_pra"));
 	}
 	
 	
@@ -131,8 +144,8 @@ public class PRA_Home extends PRA_Base{
 			{
 			String temp=Utility.attachscreenshotreport(wd, result.getName());
 		
-			logger11.fail("Testcase name"+ result.getName());
-			logger11.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+			logger26.fail("Testcase name"+ result.getName());
+			logger26.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		    }}
 			catch(Exception e)
 			{

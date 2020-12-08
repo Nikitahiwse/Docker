@@ -69,7 +69,7 @@ public class ByPest_initiation extends PRA_Home{
 	    //Check adding a pest using the lookup
 		searchpestname.sendKeys("pratylenchus");
 		logger10.log(Status.PASS, "pratylenchus text entered in pest search box");
-		Thread.sleep(6000);
+		Thread.sleep(15000);
 		
 		List<WebElement>search_item=wd.findElements(By.xpath("//li[@class='ui-menu-item']//a"));
 		int count=search_item.size();
