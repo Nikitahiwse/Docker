@@ -19,19 +19,22 @@ import GmailAPiLib.GMail;
 import config.PRA_Base;
 import library.Utility;
 import pra_child_classes.ByPathway;
+import pra_child_classes.Generate_Report;
 import pra_child_classes.Home;
 import pra_child_classes.Login;
 import pra_child_classes.Pathway_RiskAssessments;
 import pra_child_classes.PestRisk_Management;
+import pra_child_classes.Summary_Screen;
 import pra_child_classes.Testcases_for_Home_report;
 import pra_child_classes.Title_verification;
 import pra_child_classes.User_Action;
 
 public class PRA_Home extends PRA_Base{
+	
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,Logger7,Logger8,Logger9,Logger10,Logger11,Logger12,Logger13;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,Logger7,Logger8,Logger9,Logger10,Logger11,Logger12,Logger13,Logger14,Logger15;
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
@@ -120,6 +123,20 @@ public class PRA_Home extends PRA_Base{
 		pest.risk_management();
 	}
 	
+	@Test(priority = 8)
+	 void summaryscreen() throws Throwable
+	 {
+		Summary_Screen screen= PageFactory.initElements(wd, Summary_Screen.class);
+		screen.summary_content();
+	 }
+	
+	@Test(priority = 9)
+	void report_generation() throws Throwable
+	{
+		Generate_Report report=PageFactory.initElements(wd, Generate_Report.class);
+		report.generate_pra_report();
+	}
+	
 	
 	@AfterMethod
 	void fail_testcase(ITestResult result)
@@ -130,8 +147,8 @@ public class PRA_Home extends PRA_Base{
 			{
 			String temp=Utility.attachscreenshotreport(wd, result.getName());
 		
-			Logger13.fail("Testcase name"+ result.getName());
-			Logger13.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+			Logger15.fail("Testcase name"+ result.getName());
+			Logger15.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		    }}
 			catch(Exception e)
 			{

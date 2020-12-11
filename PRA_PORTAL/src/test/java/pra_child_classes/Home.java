@@ -51,33 +51,34 @@ public class Home extends PRA_Home{
 			
 		
 		create.click();
-		logger4.log(Status.PASS, "Create Team button got clicked successfully");
+		logger5.log(Status.PASS, "Create Team button got clicked successfully");
+		
 		Thread.sleep(2000);
 		teamname.sendKeys("team_for_automation");
-		logger4.log(Status.PASS, "Team Name Entered Successfully");
+		logger5.log(Status.PASS, "Team Name Entered Successfully");
 		
 		
 		invite_user_1.sendKeys("nikita.hiwse@neosoftmail.com");
-		logger4.log(Status.PASS, "Nikita invited");
+		logger5.log(Status.PASS, "Nikita invited");
 		add_user_1.click();
-		logger4.log(Status.PASS, "Nikita Added successfully");
+		logger5.log(Status.PASS, "Nikita Added successfully");
 		
 		
 		invite_user_2.sendKeys("shubhambhandarineosoft@gmail.com");
-		logger4.log(Status.PASS, " Shubham invited");
+		logger5.log(Status.PASS, " Shubham invited");
 		add_user_2.click();
-		logger4.log(Status.PASS, "Shubham Added successfully");
+		logger5.log(Status.PASS, "Shubham Added successfully");
 		
 		invite_user_3.sendKeys("ombhandari9090@gmail.com");
-		logger4.log(Status.PASS, "Om invited");
+		logger5.log(Status.PASS, "Om invited");
 		add_user_3.click();
-		logger4.log(Status.PASS, "Om Added successfully");
+		logger5.log(Status.PASS, "Om Added successfully");
 		
 		
 		
 		Thread.sleep(3000);
 		create_team.click();
-		logger4.log(Status.PASS, "Team Created successfully");
+		logger5.log(Status.PASS, "Team Created successfully");
 		Thread.sleep(2000);
 		close.click();
 	

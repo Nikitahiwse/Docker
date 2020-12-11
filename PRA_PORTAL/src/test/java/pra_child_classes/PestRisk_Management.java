@@ -43,20 +43,18 @@ public class PestRisk_Management extends PRA_Home {
 	@FindBy(xpath="//a[@class='ga_UserActions_ViewDatasheet']")
 	WebElement view_datasheet;
 	
-	@FindBy(xpath = "//iframe[@class='sigma-iframe']")
-	WebElement iframe;
-	
-	@FindBy(xpath = "//div[@class='access-inner']//a[@tabindex='100']")
-    WebElement Log_in_via_email_username;
-	  
-	@FindBy(id="username") 
-	WebElement username;
-	  
-	@FindBy(id="password") 
-	WebElement password;
-	  
-	@FindBy(xpath="//button//span[text()='Log in']") 
-	WebElement login;
+	/*
+	 * @FindBy(xpath = "//iframe[@class='sigma-iframe']") WebElement iframe;
+	 * 
+	 * @FindBy(xpath = "//div[@class='access-inner']//a[@tabindex='100']")
+	 * WebElement Log_in_via_email_username;
+	 * 
+	 * @FindBy(id="username") WebElement username;
+	 * 
+	 * @FindBy(id="password") WebElement password;
+	 * 
+	 * @FindBy(xpath="//button//span[text()='Log in']") WebElement login;
+	 */
 	
 	@FindBy(xpath="//a[@class='k-button k-bare k-button-icon k-window-action']")
 	WebElement close;
@@ -158,29 +156,33 @@ public class PestRisk_Management extends PRA_Home {
 			  {
 				  wd.switchTo().window(child);
 				  System.out.println("child window title is"+wd.getTitle());
+				 
 				  
-				  Thread.sleep(3000); 
-				  wd.switchTo().frame(iframe);
+				 // Thread.sleep(3000); 
+				  //wd.switchTo().frame(iframe);
 				  
-				  Thread.sleep(3000);  
-				    Log_in_via_email_username.click();  
-				    Logger12.log(Status.PASS, "Log_in email_username tab should get clicked");
+				//  Thread.sleep(3000);  
+				   // Log_in_via_email_username.click();  
+				   // Logger12.log(Status.PASS, "Log_in email_username tab should get clicked");
 					  
-					Thread.sleep(3000);
-					username.sendKeys(cpc_username);
-					Logger12.log(Status.PASS, "Enter Username");
+					//Thread.sleep(3000);
+				//	username.sendKeys(cpc_username);
+					//Logger12.log(Status.PASS, "Enter Username");
 					  
-					Thread.sleep(2000);
-					password.sendKeys(cpc_password);
-					Logger12.log(Status.PASS, "Enter Password");
+				//	Thread.sleep(2000);
+				//	password.sendKeys(cpc_password);
+				//	Logger12.log(Status.PASS, "Enter Password");
 					  
-					Thread.sleep(4000); 
-					login.click();
-					Logger12.log(Status.PASS, "Login button clicked Successfully");
+					//Thread.sleep(4000); 
+				//	login.click();
+				//	Logger12.log(Status.PASS, "Login button clicked Successfully");
 					 
-					Thread.sleep(5000);
-					wd.switchTo().window(parent);
-					System.out.println("parent window title is:"+wd.getTitle());
+					Thread.sleep(8000);
+					wd.close();
+										
+					  wd.switchTo().window(parent);
+					  System.out.println("parent window title is:"+wd.getTitle());
+					 
 					
 					Thread.sleep(3000);
 					close.click();

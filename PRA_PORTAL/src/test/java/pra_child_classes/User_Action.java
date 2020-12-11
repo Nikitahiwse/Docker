@@ -105,7 +105,7 @@ public class User_Action extends PRA_Home {
 	@FindBy(xpath = "//input[@class='btn btn-pra-green k-float-right ga_Save_ExcludeFromAssessment' and @value='Save']")
 	WebElement save;
 	
-	@FindBy(xpath = "//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[12]/td[12]/a")
+	@FindBy(xpath = "(//span[@class='glyphicon glyphicon-option-horizontal user-action'])[12]")
 	WebElement Frankliniella_useraction;
 	
 	@FindBy(xpath = "//a[@class='ga_UserActions_AddPestQuarantineStatus']")
@@ -120,7 +120,7 @@ public class User_Action extends PRA_Home {
 	@FindBy(xpath = "//input[@class='btn btn-pra-green k-float-right']")
 	WebElement save_regulatory_status;
 	
-	@FindBy(xpath = "@FindBy(xpath = \"//*[@id=\\\"PestListGridIncluded\\\"]/table/tbody/tr[12]/td[12]/a\")")
+	@FindBy(xpath = "//*[@id='PestListGridIncluded']/table/tbody/tr[12]/td[12]/a")
 	WebElement Frankliniella_useraction_again_click;
 	
 	@FindBy(xpath = "//a[@class='ga_UserActions_AddNotes']")
