@@ -39,8 +39,8 @@ public class Summary_Screen extends PRA_Home{
 	@FindBy(xpath = "//*[@id=\"initiation-form\"]/div/div[3]/button[2]")
 	WebElement nextsteps_save;
 	
-	@FindBy(name = "gotopestlist")
-	WebElement go_to_pestlist;
+	@FindBy(xpath = "//a[@class='btn btn-pra-green ga_SaveAndReturnToPestList']")
+	WebElement return_to_pestlist;
 	
 	
 	
@@ -91,7 +91,7 @@ public class Summary_Screen extends PRA_Home{
 		Logger13.log(Status.PASS, "Save button got clicked successfully");
 		Thread.sleep(5000);
 		
-		go_to_pestlist.click();
+		return_to_pestlist.click();
 		Logger13.log(Status.PASS, "Redirected to pest list tab successfully");
 		Thread.sleep(5000);
 		

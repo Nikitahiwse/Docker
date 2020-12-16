@@ -9,11 +9,12 @@ import com.aventstack.extentreports.Status;
 import pra_package.PRA_Home;
 
 public class Pathway_RiskAssessments extends PRA_Home{
-
-	@FindBy(linkText = "Select assessment")
+	
+	@FindBy(xpath = "//*[@id='PestListGridIncluded']/table/tbody/tr[2]/td[1]/a")    //Peach twig borer               
 	WebElement select_assessment;
 	
-	@FindBy(xpath="//input[@class='btn btn-pra-red btn-submit-form margin-top-20' and @value='Rapid assessment']")
+	
+	@FindBy(xpath = "//input[@value='Rapid assessment']")
 	WebElement rapid_assessment;
 	
 	@FindBy(name="RapidAssessmentSections.RapidAssessmentQuestions[0].PotentialEstablishmentSpread")
@@ -35,9 +36,9 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	WebElement not_required;
 	
 	
-	//Assessment with YES Option
+	//Assessment with YES Option (Aspergillus fumigatus)
 	
-	@FindBy(linkText = "Select assessment")
+	@FindBy(xpath = "//*[@id='PestListGridIncluded']/table/tbody/tr[6]/td[1]/a")
 	WebElement select_black_borer;
 	
 	@FindBy(xpath="//input[@class='btn btn-pra-red btn-submit-form margin-top-20' and @value='Rapid assessment']")
@@ -63,10 +64,10 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	
 	
 	
-	//Full risk Assessment
+	//Full risk Assessment (Apte monachus(Black Borer))
 	
 	
-	@FindBy(linkText = "Select assessment")
+	@FindBy(xpath = "//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[4]/td[1]/a")
 	WebElement Apate_monachus_assessment;
 	
 	@FindBy(xpath="//input[@class='btn btn-pra-red btn-submit-form margin-top-20' and @value='Full assessment']")
@@ -147,8 +148,6 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	@FindBy(xpath="//input[@class='ga_IsPhytosanitaryMeasuresYes']")
 	WebElement yes;
 	
-	@FindBy(xpath="//input[@id='btnGoToManagement']")
-	WebElement save_management;
 	
 	@FindBy(xpath="//input[@value='Save and return to pest list' and @class='btn-pra-green']")
 	WebElement save_return_pestlist;
@@ -210,12 +209,14 @@ public class Pathway_RiskAssessments extends PRA_Home{
 		
 		Thread.sleep(2000);
 		potential_for_establishment_spread_option.click();
+		Thread.sleep(2000);
 		Select potential = new Select(select_option_1);
 		potential.selectByValue("1");
 		Logger10.log(Status.PASS, "Yes Option Selected");
 		
 		Thread.sleep(3000);
 		potential_for_environmental_option.click();
+		Thread.sleep(2000);
 		Select environmental = new Select(select_option_2);
 		environmental.selectByValue("1");
 		Logger10.log(Status.PASS, "Yes Option Selected");

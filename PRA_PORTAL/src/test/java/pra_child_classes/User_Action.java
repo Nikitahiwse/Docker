@@ -32,7 +32,7 @@ public class User_Action extends PRA_Home {
 	
 	//Export_Import Pest dodder
 	
-	@FindBy(xpath="//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[5]/td[12]/a")
+	@FindBy(xpath="//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[7]/td[12]/a")
 	WebElement useraction_menu;
 	
 	
@@ -45,7 +45,7 @@ public class User_Action extends PRA_Home {
 	@FindBy(xpath="//button[@class='btn-pra-gray']")
 	WebElement close_dodder;
 	
-	@FindBy(xpath="//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[6]/td[12]/a")   //wrong
+	@FindBy(xpath="//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[8]/td[12]/a")   //wrong
 	WebElement apple_leaf_usermenu;
 	
 	@FindBy(xpath="//*[@id=\"divpopup\"]/ul/li[8]/a")
@@ -57,7 +57,7 @@ public class User_Action extends PRA_Home {
 	@FindBy(xpath="//a[@class='btn btn-pra-red k-float-right']")
 	WebElement import_on_leaf_upload;
 
-	@FindBy(xpath="//*[@id=\"modalimportwarning\"]/div/div/div/div/div[2]/p[2]/input[2]")
+	@FindBy(xpath="//*[@id='modalimportwarning']/div/div/div/div/div[2]/p[2]/input[2]")
 	WebElement continue_warning;
 	
 	@FindBy(xpath="//input[@class='btn btn-default' and @value='OK']")
@@ -66,7 +66,7 @@ public class User_Action extends PRA_Home {
 	@FindBy(xpath="//a[@class='k-button k-bare k-button-icon k-window-action']")
 	WebElement close;
 	
-	@FindBy(xpath="//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[5]/td[12]/a")     //correct file
+	@FindBy(xpath="//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[7]/td[12]/a")     //correct file
 	WebElement dodder_menu;
 	
 	@FindBy(xpath="//*[@id=\"divpopup\"]/ul/li[8]/a")
@@ -78,16 +78,17 @@ public class User_Action extends PRA_Home {
 	@FindBy(xpath="//a[@class='btn btn-pra-red k-float-right' and text()='Upload']")
 	WebElement correctfile_upload;
 	
-	@FindBy(xpath="/html/body/div[4]/div/div/div/div/div/div[2]/p[2]/input[2]")
+	@FindBy(xpath = "//*[@id=\"modalimportwarning\"]/div/div/div/div/div[2]/p[2]/input[2]")
 	WebElement continue_upload;
 	
-	@FindBy(xpath="//*[@id=\"modalimporterror\"]/div/div/div[1]/button")
+	//@FindBy(xpath="//*[@id='modalimporterror']/div/div/div[1]/button")
+	@FindBy(xpath = "(//button[@class='close pull-right'])[2]")
 	WebElement close1;
 	
 	@FindBy(xpath="//a[@role='button' and @class='k-button k-bare k-button-icon k-window-action']")
 	WebElement close2;
 	
-	@FindBy(xpath = "//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[8]/td[12]/a")    //Drosophila suzukii (spotted wing drosophila)
+	@FindBy(xpath = "//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[10]/td[12]/a")    //Drosophila suzukii (spotted wing drosophila)
 	WebElement assessment;
 	
 	@FindBy(xpath = "//a[@class='ga_UserActions_ExcludeFromAssessment']")
@@ -105,7 +106,7 @@ public class User_Action extends PRA_Home {
 	@FindBy(xpath = "//input[@class='btn btn-pra-green k-float-right ga_Save_ExcludeFromAssessment' and @value='Save']")
 	WebElement save;
 	
-	@FindBy(xpath = "(//span[@class='glyphicon glyphicon-option-horizontal user-action'])[12]")
+	@FindBy(xpath = "(//a[@class='viewButton ga_PestListGridIncluded_UserActions'])[13]")
 	WebElement Frankliniella_useraction;
 	
 	@FindBy(xpath = "//a[@class='ga_UserActions_AddPestQuarantineStatus']")
@@ -120,7 +121,7 @@ public class User_Action extends PRA_Home {
 	@FindBy(xpath = "//input[@class='btn btn-pra-green k-float-right']")
 	WebElement save_regulatory_status;
 	
-	@FindBy(xpath = "//*[@id='PestListGridIncluded']/table/tbody/tr[12]/td[12]/a")
+	@FindBy(xpath = "//*[@id=\"PestListGridIncluded\"]/table/tbody/tr[13]/td[12]/a")
 	WebElement Frankliniella_useraction_again_click;
 	
 	@FindBy(xpath = "//a[@class='ga_UserActions_AddNotes']")
@@ -161,6 +162,8 @@ public class User_Action extends PRA_Home {
 		
 	
 	}
+	
+	
 	
 	public void export_import_pest() throws Throwable
 	{

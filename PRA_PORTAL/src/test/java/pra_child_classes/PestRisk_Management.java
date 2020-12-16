@@ -9,7 +9,7 @@ import com.aventstack.extentreports.Status;
 
 import pra_package.PRA_Home;
 
-public class PestRisk_Management extends PRA_Home {
+public class PestRisk_Management extends PRA_Home {      //Apate monachus (black borer)
 
 	
 	@FindBy(xpath="//a[@class='ga_PestList_Tab_RiskManagement']")
@@ -25,7 +25,7 @@ public class PestRisk_Management extends PRA_Home {
 	@FindBy(xpath="//input[@value='Save and return to pest list' and @class='btn-pra-red']")
 	WebElement save_return_to_pestlist;
 	
-	@FindBy(xpath="//*[@id=\"PestListGridManagement\"]/table/tbody/tr/td[12]/a")
+	@FindBy(xpath="//*[@id='PestListGridManagement']/table/tbody/tr/td[12]/a")
 	WebElement user_actions_tab;
 	
 	@FindBy(xpath="//*[@id=\"divpopup\"]/ul/li[3]/a")
@@ -62,7 +62,7 @@ public class PestRisk_Management extends PRA_Home {
 	
 	//Risk Management Tab
 	
-	@FindBy(xpath="//*[@id=\"PestListGridManagement\"]/table/tbody/tr[1]/td[12]/a")
+	@FindBy(xpath="//*[@id='PestListGridManagement']/table/tbody/tr/td[12]/a")
 	WebElement user_action;
 	
 	@FindBy(xpath = "//a[@class='ga_UserActions_GoToAndCompleteRiskManagement']")

@@ -127,7 +127,7 @@ public class ByPathway extends PRA_Home {
 		search_crop.sendKeys("peach");
 		Logger9.log(Status.PASS, "Crop searched successfully");
 		
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		click_crop.click();
 		Logger9.log(Status.PASS, "Search Crop selected successfully");
 		
@@ -136,6 +136,7 @@ public class ByPathway extends PRA_Home {
 		leaves.click();
 		Logger9.log(Status.PASS, "Commodity selected successfully");
 		
+		Thread.sleep(3000);
 		note.sendKeys("commodity selected");
 		Logger9.log(Status.PASS, "Notes written if any");
 		
