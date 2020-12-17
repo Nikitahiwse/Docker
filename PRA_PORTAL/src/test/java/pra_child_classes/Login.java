@@ -28,24 +28,24 @@ public class Login extends PRA_Home{
 	
 		wd.switchTo().frame(0);
 		Thread.sleep(2000);
-		String name=window_name.getText();
-	    System.out.println(name);
+		//String name=window_name.getText();
+	    //System.out.println(name);
 	    
-	    if(name.equals("Manage Access"))
-        {
-	      login_via_username_password.click();
-         }
+		/*
+		 * if(name.equals("Manage Access")) { login_via_username_password.click(); }
+		 */
 	    Thread.sleep(2000);
 		username.sendKeys(cpc_username);
 		Thread.sleep(1000);
-		logger1.log(Status.PASS, "cpc username got entered successfully");
+		logger1.log(Status.PASS, "CPC username got entered successfully");
 		password.sendKeys(cpc_password);
 		Thread.sleep(1000);
-		logger1.log(Status.PASS, "cpc password got entered successsfully");
+		logger1.log(Status.PASS, "CPC password got entered successsfully");
 		login.click();
 		Thread.sleep(3000);
-		logger1.log(Status.PASS, "login button got clicked successfully");
+		logger1.log(Status.PASS, "Login button got clicked successfully");
 		Thread.sleep(5000);
+		
 	}
 	
 	@FindBy(xpath="//input[@id='UsernameEmail']")WebElement user_name;
@@ -75,7 +75,8 @@ public class Login extends PRA_Home{
 		submit.click();
 		Thread.sleep(3000);
 		logger1.log(Status.PASS, "Submit button got clicked successfully");
-		
+		Thread.sleep(4000);
+		System.out.println("login Test is passed");
 	}
 
 }

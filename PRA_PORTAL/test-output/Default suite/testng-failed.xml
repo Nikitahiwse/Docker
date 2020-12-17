@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pra_package.PRA">
+      <class name="pra_package.PRA_Home">
         <methods>
           <include name="fail_testcase"/>
+          <include name="title_verification"/>
+          <include name="teardown_browerclosing"/>
           <include name="login_Test"/>
           <include name="initialization_browser_opening"/>
-          <include name="teardown_browerclosing"/>
         </methods>
-      </class> <!-- pra_package.PRA -->
+      </class> <!-- pra_package.PRA_Home -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
