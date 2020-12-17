@@ -31,18 +31,18 @@ public class Previous_PRA extends PRA_Home
 		List<WebElement>tablerow=wd.findElements(By.xpath("//div[@id='PRADatagrid']//tbody//tr"));
 		int totalrow=tablerow.size();
 		System.out.println("Total PRA present "+ totalrow);
-		logger8.log(Status.PASS, "Total PRA present "+totalrow);
+		logger7.log(Status.PASS, "Total PRA present "+totalrow);
 		for(int i=1;i<=totalrow;i++) {
 		List<WebElement>row=wd.findElements(By.xpath("//div[@id='PRADatagrid']//tbody//tr["+i+"]//td"));
 		Thread.sleep(2000);
-		logger8.log(Status.PASS, "Row"+i);
+		logger7.log(Status.PASS, "Row"+i);
 		for(WebElement attribute : row)
 		{
 			String attributename=attribute.getText();
 			System.out.println("Attributes present in PRA row-->"+attributename);
 			Thread.sleep(1000);
 			
-			logger8.log(Status.PASS, "Attributes present in PRA row-->"+ attributename);
+			logger7.log(Status.PASS, "Attributes present in PRA row-->"+ attributename);
 				
 		}
 		
@@ -66,40 +66,39 @@ public class Previous_PRA extends PRA_Home
 	{
 		//To view Bypathway PRA
 		JavascriptExecutor jse=(JavascriptExecutor)wd;
-        logger8.log(Status.PASS, "---------------To view  Bypathway PRA----------------");
+        logger7.log(Status.PASS, "---------------To view  Bypathway PRA----------------");
 		PRA_demo1.click();
 		Thread.sleep(2000);
-		logger8.log(Status.PASS, "PRA_demo1 pathway PRA is opened");
+		logger7.log(Status.PASS, "PRA_demo1 pathway PRA is opened");
 		String initiation_title=initiation.getText();
-        logger8.log(Status.PASS, initiation_title+" is opened");
+        logger7.log(Status.PASS, initiation_title+" is opened");
         jse.executeScript("window.scrollBy(0,900)", "");
 		Thread.sleep(3000);
         save_and_goto_pest_list.click();
         Thread.sleep(2000);
-        logger8.log(Status.PASS, "Save and goto pestlist- button got clicked");
+        logger7.log(Status.PASS, "Save and goto pestlist- button got clicked");
         String risk_assesment_text=risk_assessment.getText();
-        logger8.log(Status.PASS, risk_assesment_text+" is opened");
+        logger7.log(Status.PASS, risk_assesment_text+" is opened");
         jse.executeScript("window.scrollBy(0,900)", "");
         jse.executeScript("window.scrollBy(0,-900)", "");
         risk_management.click();
         String risk_management_text=risk_management.getText();
         Thread.sleep(2000);
-        logger8.log(Status.PASS, risk_management_text+" tab is opened");
+        logger7.log(Status.PASS, risk_management_text+" tab is opened");
         jse.executeScript("window.scrollBy(0,300)", "");
         jse.executeScript("window.scrollBy(0,-300)", "");
         analysis_summary.click();
         Thread.sleep(2000);
         String analysis_summary_text=analysis_summary.getText();
-        logger8.log(Status.PASS, analysis_summary_text+" tab is opened");
+        logger7.log(Status.PASS, analysis_summary_text+" tab is opened");
         jse.executeScript("window.scrollBy(0,900)", "");
-      //  PRA_status_complete.click();
-      //  logger8.log(Status.PASS, "Change PRA status to complete-button got clicked");
-       // Thread.sleep(2000);
-       // String save_message=success_message.getText();
-       // logger8.log(Status.PASS, save_message);
-       // Thread.sleep(3000);
-        home.click();
-        Thread.sleep(1000);
+       PRA_status_complete.click();
+       logger7.log(Status.PASS, "Change PRA status to complete-button got clicked");
+       Thread.sleep(2000);
+       String save_message=success_message.getText();
+       logger7.log(Status.PASS, save_message);
+       Thread.sleep(3000);
+     
     
 		
 	}
@@ -108,7 +107,7 @@ public class Previous_PRA extends PRA_Home
 	public void View_Report_from_previous_PRA() throws InterruptedException
 	{
 		//To view Report 
-		logger8.log(Status.PASS, "------------To view Report-----------");
+		logger7.log(Status.PASS, "------------To view Report-----------");
 		previous_PRA.click();
 		jse.executeScript("window.scrollBy(0,600)", "");
 		Thread.sleep(2000);
@@ -127,7 +126,7 @@ public class Previous_PRA extends PRA_Home
 			String PRAtype=PRA_type.getText();
 			report.click();
 			Thread.sleep(3000);
-			logger8.log(Status.PASS," Report got clicked");
+			logger7.log(Status.PASS," Report got clicked");
 			if(PRAtype.equalsIgnoreCase("Pathway"))
 			{
 			PRA_report=wd.findElement(By.xpath("//div[@class='report-title']//strong"));
@@ -141,7 +140,7 @@ public class Previous_PRA extends PRA_Home
 			String Session_titile=PRA_report.getText();
 			jse.executeScript("window.scrollBy(0,300)", "");
 			jse.executeScript("window.scrollBy(0,300)", "");
-			logger8.log(Status.PASS, Session_titile+" report is opened");
+			logger7.log(Status.PASS, Session_titile+" report is opened");
 			wd.navigate().back();
 			
 			Thread.sleep(3000);
@@ -161,56 +160,60 @@ public class Previous_PRA extends PRA_Home
 	@FindBy(xpath="//div[@id='PRADatagrid']//a[@class='k-link'and text()='PRA start date ']//span[@class='k-icon k-i-filter']")WebElement PRA_start_date_filter;
 	@FindBy(xpath="//div[@id='PRADatagrid']//a[@class='k-link'and text()='PRA due date ']//span[@class='k-icon k-i-filter']")WebElement PRA_due_date_filter;
 	@FindBy(xpath="//div[@id='PRADatagrid']//a[@class='k-link'and text()='Status ']//span[@class='k-icon k-i-filter']")WebElement Status_filter;
-	@FindBy(xpath="//div[@id='PRADatagrid']//a[@class='k-link'and text()='Completed date ']//span[@class='k-icon k-i-filter']")WebElement completed_date_filter;
+	@FindBy(xpath="//div[@id='PRADatagrid']//a[@class='k-link'and text()='Last Modified ']//span[@class='k-icon k-i-filter']")WebElement Last_modified_filter;
+	@FindBy(xpath="//div[@id='PRADatagrid']//a[@class='k-link'and text()='Completed ']//span[@class='k-icon k-i-filter']")WebElement completed_date_filter;
 	
    public void filter() throws InterruptedException
 	{
 		
 		
-		  logger8.log(Status.PASS,"-------------Filter Test for Previous PRA-----------------------");
+		  logger7.log(Status.PASS,"-------------Filter Test for Previous PRA-----------------------");
 		
 		 
 		
-		  logger8.log(Status.PASS, "Values passed for session filter -equal To = P03848  and equal To = P03848");
+		  logger7.log(Status.PASS, "Values passed for session filter -equal To = P03848  and equal To = P03848");
 		  Filter.filte_previoustab(Session_filter,"P03848","P03848","1");
 		 
-		  logger8.log(Status.PASS, "Values passed for session filter -Not equal To = P03848  or Not equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for session filter -Not equal To = P03848  or Not equal To = blank ");
 		  Filter.filte_previoustab(Session_filter,"P03847","","2");
 		 
 		 
-		  logger8.log(Status.PASS, "Values passed for PRA Type filter -Starts With = Pathway  And  Is equal To = Pest ");
+		  logger7.log(Status.PASS, "Values passed for PRA Type filter -Starts With = Pathway  And  Is equal To = Pest ");
 		  Filter.filte_previoustab(PRA_Type_filter,"Pathway","Pest","3");
 		
-		  logger8.log(Status.PASS, "Values passed for PRA Type filter -Contains = Pathway  And  Is equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for PRA Type filter -Contains = Pathway  And  Is equal To = blank ");
 		  Filter.filte_previoustab(PRA_Type_filter,"Pathway","","4");
 	
 		 
-		  logger8.log(Status.PASS, "Values passed for PRA Title filter -Does not contain = PRA  And  Is equal To = blank  ");
+		  logger7.log(Status.PASS, "Values passed for PRA Title filter -Does not contain = PRA  And  Is equal To = blank  ");
 		  Filter.filte_previoustab(PRA_Title,"PRA","","5");
 		  
-		  logger8.log(Status.PASS, "Values passed for PRA Title filter -Ends With = india  And  Is equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for PRA Title filter -Ends With = india  And  Is equal To = blank ");
 		  Filter.filte_previoustab(PRA_Title,"india","","6");
 		 
 		
-		  logger8.log(Status.PASS, "Values passed for PRA start date filter -Is null= blank  And  Is equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for PRA start date filter -Is null= blank  And  Is equal To = blank ");
 		  Filter.filte_previoustab(PRA_start_date_filter,"","","7");
 		 
-		  logger8.log(Status.PASS, "Values passed for PRA start date filter -Is not Null = 24/11/2020  And  Is equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for PRA start date filter -Is not Null = 24/11/2020  And  Is equal To = blank ");
 		  Filter.filte_previoustab(PRA_start_date_filter,"24/11/2020","","8");
 		  
 	
-		  logger8.log(Status.PASS, "Values passed for PRA due date filter - Is empty = blank  And  Is equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for PRA due date filter - Is empty = blank  And  Is equal To = blank ");
 		  Filter.filte_previoustab(PRA_due_date_filter,"","","9");
 		 
-		  logger8.log(Status.PASS, "Values passed for PRA due date filter -Is not Empty = 31/12/2020 And  Is equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for PRA due date filter -Is not Empty = 31/12/2020 And  Is equal To = blank ");
 		  Filter.filte_previoustab(PRA_due_date_filter,"31/12/2020","","10");
 		 
 		 
-		  logger8.log(Status.PASS, "Values passed for Status filter -Has Value = blank  And  Is equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for Status filter -Has Value = blank  And  Is equal To = blank ");
 		  Filter.filte_previoustab(Status_filter,"","","11");
 		  
+		  logger7.log(Status.PASS, "Values passed for Last modified filter -Has Value = 24/11/2020  And  Is equal To = blank ");
+		  Filter.filte_previoustab(Last_modified_filter,"24/11/2020","","11");
+		  
 		 
-		  logger8.log(Status.PASS, "Values passed for Completed date filter -Has not value = 25/11/2020  And  Is equal To = blank ");
+		  logger7.log(Status.PASS, "Values passed for Completed date filter -Has not value = 25/11/2020  And  Is equal To = blank ");
 		  Filter.filte_previoustab(completed_date_filter,"25/11/2020","","12");
         
 	    

@@ -35,39 +35,39 @@ public class Regulated_Pest_list extends PRA_Home {
 		jse.executeScript("window.scrollBy(0,600)", "");
 		Thread.sleep(2000);
 		regulated_pest_list_tab.click();
-		logger9.log(Status.PASS, "Regulated pest list tab got clicked");
+		logger8.log(Status.PASS, "Regulated pest list tab got clicked");
 		Thread.sleep(2000);
 		add_new_pest.click();
-		logger9.log(Status.PASS, "Add new pest button got clicked");
+		logger8.log(Status.PASS, "Add new pest button got clicked");
 		Thread.sleep(2000);
 		List<WebElement>dialog= wd.findElements(By.xpath("//div[@id='addeditpopupregulatory']//div[@class='modal-content']"));
 		int dialog_count=dialog.size();
 		if(dialog_count==1)
 		{
-			logger9.log(Status.PASS, "Regulated Pest dialog box is visible");
+			logger8.log(Status.PASS, "Regulated Pest dialog box is visible");
 		}
 		Thread.sleep(2000);
 		cancel_button.click();
 		Thread.sleep(2000);
-		logger9.log(Status.PASS, "cancel button got clicked and regulated Pest dialog box is closed");
+		logger8.log(Status.PASS, "cancel button got clicked and regulated Pest dialog box is closed");
 		
 		add_new_pest.click();
-		logger9.log(Status.PASS, "Add new pest button got clicked");
+		logger8.log(Status.PASS, "Add new pest button got clicked");
 		Thread.sleep(2000);
 		search_pest.sendKeys("apple");
-		logger9.log(Status.PASS, "lookup search for- apple");
+		logger8.log(Status.PASS, "lookup search for- apple");
 		Thread.sleep(2000);
 		search_pest.sendKeys(Keys.BACK_SPACE);
 		Thread.sleep(6000);
 		List<WebElement>pests=wd.findElements(By.xpath("//li[@class='ui-menu-item']//a"));
 		int count=pests.size();
-		System.out.println("count for apple"+count);
-		logger9.log(Status.PASS, "Total pest found in Lookup search for apple "+count);
+		
+		logger8.log(Status.PASS, "Total pest found in Lookup search for apple "+count);
 		int i=1;
 		for(WebElement pest : pests)
 		{
 			String pestname=pest.getText();
-			logger9.log(Status.PASS, i+" "+pestname);
+			logger8.log(Status.PASS, i+" "+pestname);
 			i++;
 		}
 		
@@ -81,12 +81,12 @@ public class Regulated_Pest_list extends PRA_Home {
 		Thread.sleep(1000);
 		Select s2=new Select(wd.findElement(By.xpath("//select[@name='PestQuarantineStatusID']")));
 		s2.selectByValue("2");
-		logger9.log(Status.PASS, "Second option got selected");
+		logger8.log(Status.PASS, "Second option got selected");
 		Thread.sleep(1000);
 		save_button.click();
 		Thread.sleep(1000);
 		String notification_pest=notification.getText();
-		logger9.log(Status.PASS, "Save button got clicked and "+notification_pest);
+		logger8.log(Status.PASS, "Save button got clicked and "+notification_pest);
 		Thread.sleep(1000);
 		ok.click();
 		Thread.sleep(5000);
@@ -101,13 +101,13 @@ public class Regulated_Pest_list extends PRA_Home {
 	public void edit_record() throws InterruptedException
 	{
 		
-		logger9.log(Status.PASS, "-------------Edit Record---------------");
+		logger8.log(Status.PASS, "-------------Edit Record---------------");
 		user_action.click();
-		logger9.log(Status.PASS, "User action got selected");
+		logger8.log(Status.PASS, "User action got selected");
 		Thread.sleep(1000);
 		edit.click();
 		Thread.sleep(2000);
-		logger9.log(Status.PASS, "Edit option got clicked");
+		logger8.log(Status.PASS, "Edit option got clicked");
 		Thread.sleep(4000);
         //status_option.click();
 		List<WebElement>status_options=wd.findElements(By.xpath("//select[@name='PestQuarantineStatusID']"));
@@ -128,11 +128,11 @@ public class Regulated_Pest_list extends PRA_Home {
 				
 		
 		Thread.sleep(1000);
-		logger9.log(Status.PASS, "Third status option got selected");
+		logger8.log(Status.PASS, "Third status option got selected");
 		update.click();
 		Thread.sleep(1000);
 		String update_message=notification_update.getText();
-		logger9.log(Status.PASS, "Update button got clicked -"+update_message);
+		logger8.log(Status.PASS, "Update button got clicked -"+update_message);
 		Thread.sleep(1000);
 		ok_button.click();
 		Thread.sleep(2000);
@@ -140,7 +140,7 @@ public class Regulated_Pest_list extends PRA_Home {
 		String status_no=regulatory_status_for_apple_rust.getText();
 		if(status_no.equalsIgnoreCase("3"));
 		{
-			logger9.log(Status.PASS, "Pest status is updated with key value 3");
+			logger8.log(Status.PASS, "Pest status is updated with key value 3");
 		}
 
 		Thread.sleep(3000);
@@ -156,22 +156,22 @@ public class Regulated_Pest_list extends PRA_Home {
 	public void cleanup_pest() throws InterruptedException
 	{
 		
-		logger9.log(Status.PASS, "-------------Delete Pest---------------");
+		logger8.log(Status.PASS, "-------------Delete Pest---------------");
 		user_action.click();
-		Thread.sleep(1000);
-		logger9.log(Status.PASS, "User action got clicked");
+		Thread.sleep(2000);
+		logger8.log(Status.PASS, "User action got clicked");
 	
 		Delete.click();
-		Thread.sleep(1000);
-		logger9.log(Status.PASS, "Delete option got selected");
+		Thread.sleep(3000);
+		logger8.log(Status.PASS, "Delete option got selected");
 		
 		delete_button.click();
 		Thread.sleep(1000);
-		logger9.log(Status.PASS, "Delete button got clicked");
+		logger8.log(Status.PASS, "Delete button got clicked");
 		Thread.sleep(1000);
 		
 		String delete_notification=notification_delete.getText();
-	    logger9.log(Status.PASS, "Notification message after click on delete button-"+delete_notification);
+	    logger8.log(Status.PASS, "Notification message after click on delete button-"+delete_notification);
 	    
 	    Thread.sleep(1000);
 	    ok_del.click();
@@ -180,7 +180,7 @@ public class Regulated_Pest_list extends PRA_Home {
 	    int count_del=apple.size();
 	    if(count_del== 0)
 	    {
-	    	logger9.log(Status.PASS, "Pest is deleted successfully");
+	    	logger8.log(Status.PASS, "Pest is deleted successfully");
 	    }
 	    
 	    
@@ -191,32 +191,32 @@ public class Regulated_Pest_list extends PRA_Home {
 	public void pagination() throws InterruptedException
 	{
 		
-		logger9.log(Status.PASS, "------------Pagination-------------");
+		logger8.log(Status.PASS, "------------Pagination-------------");
 		List<WebElement>pests=wd.findElements(By.xpath("//div[@id='RegulatoryStatusDatagrid']//tbody//tr"));
 		int pest_count=pests.size();
 		if(pest_count== 10)
 		{
-			logger9.log(Status.PASS, "Total no of pest present in page 1 = "+pest_count);
+			logger8.log(Status.PASS, "Total no of pest present in page 1 = "+pest_count);
 		}
 		
 		Thread.sleep(2000);
 		
 		go_to_next_page.click();
 		Thread.sleep(4000);
-		logger9.log(Status.PASS, "Next page is opened");
+		logger8.log(Status.PASS, "Next page is opened");
 	
 		
 		List<WebElement>pest_secondpage=wd.findElements(By.xpath("//div[@id='RegulatoryStatusDatagrid']//tbody//tr"));
 		int pest_count_secondpage=pest_secondpage.size();
 		if(pest_count_secondpage== 2)
 		{
-			logger9.log(Status.PASS, "Total no of pest present in page 2 = "+pest_count_secondpage);
+			logger8.log(Status.PASS, "Total no of pest present in page 2 = "+pest_count_secondpage);
 		}
 		Thread.sleep(1000);
 		
 		go_to_previous_page.click();
 		Thread.sleep(2000);
-		logger9.log(Status.PASS, "Previous page is opened");
+		logger8.log(Status.PASS, "Previous page is opened");
 		
 	}
 	
@@ -227,21 +227,21 @@ public class Regulated_Pest_list extends PRA_Home {
 	public void regulated_filter() throws InterruptedException
 	{
 		
-		logger9.log(Status.PASS,"---------------------Regulated Filter------------------------");
+		logger8.log(Status.PASS,"---------------------Regulated Filter------------------------");
 		Thread.sleep(3000);
-		logger9.log(Status.PASS, "Pestname passed for Pest Name Filter- Pratylenchus rwandae");
+		logger8.log(Status.PASS, "Pestname passed for Pest Name Filter- Pratylenchus rwandae");
 		Filter.regulated_pest_filter(pestname_filter,"Pratylenchus rwandae","Pest Name");
 		
 		Thread.sleep(1000); 
-		logger9.log(Status.PASS,"Country passed for Country/area Filter- United Kingdom");
+		logger8.log(Status.PASS,"Country passed for Country/area Filter- United Kingdom");
 	    Filter.regulated_pest_filter(Regulating_country_filter,"United Kingdom","Regulating country/area");
 	    Thread.sleep(1000);
-		logger9.log(Status.PASS, " Status number  passed for Status Filter- 2 ");
+		logger8.log(Status.PASS, " Status number  passed for Status Filter- 2 ");
 		Filter.regulated_pest_filter(Regulatory_status_filter, "2","Regulatory status"); 
 		Thread.sleep(1000); 
-		logger9.log(Status.PASS," Date passed for Date last modified Filter- 30/11/2020");
+		logger8.log(Status.PASS," Date passed for Date last modified Filter- 30/11/2020");
 	    Filter.regulated_pest_filter(Date_last_modified_filter,"30/11/2020","Date last modified"); 
 	    Thread.sleep(1000);
-		 
+		System.out.println("HomePage Test is passed");
 	}
 }

@@ -102,18 +102,18 @@ public class Filter extends PRA_Home{
 	public static void filter_result()
 	{
 		
-		logger8.log(Status.PASS, "Attributes present after applying filter");
+		logger7.log(Status.PASS, "Attributes present after applying filter");
 		List<WebElement> results=wd.findElements(By.xpath("//div[@id='PRADatagrid']//td"));
 		int count=results.size();
 	     	if(count==0)
 		     {
-			logger8.log(Status.PASS, "No Previous Teams PRA");
+			logger7.log(Status.PASS, "No Previous Teams PRA");
 		      }
 		     for(WebElement result1 :results)
 			
 				{
 			       attribute_name=result1.getText();
-			        logger8.log(Status.PASS,attribute_name);
+			        logger7.log(Status.PASS,attribute_name);
 				}
 	
 		 
@@ -254,7 +254,7 @@ public class Filter extends PRA_Home{
 	 public static void result_after_filter_relulated(int i) throws InterruptedException
 	 {
 		 
-		 logger9.log(Status.PASS, "Filter Result for dropdown option "+i);
+		 logger7.log(Status.PASS, "Filter Result for dropdown option "+i);
 		 
 		 List<WebElement>attributes_of_regulated_pest=wd.findElements(By.xpath("//div[@id='RegulatoryStatusDatagrid']//td"));
 		 int count_regu=attributes_of_regulated_pest.size();
@@ -263,7 +263,7 @@ public class Filter extends PRA_Home{
 			 String text_no=wd.findElement(By.xpath("//div[@class='k-grid-norecords-template']")).getText();
 			 if(text_no.equalsIgnoreCase("No Regulatory Status"))
 			 {
-				 logger9.log(Status.PASS, text_no);
+				 logger7.log(Status.PASS, text_no);
 			 }
 			
 		 }
@@ -272,7 +272,7 @@ public class Filter extends PRA_Home{
 		 {
 			 
 			 String attribute_text=attribute.getText();
-			 logger9.log(Status.PASS, attribute_text);
+			 logger7.log(Status.PASS, attribute_text);
 		 }
 	 }
 	 

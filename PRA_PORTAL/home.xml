@@ -7,10 +7,7 @@
       <methods>
       
       <exclude name="Team_creation"></exclude>
-      <exclude name="Banner_footer"></exclude>
-      <exclude name="PRA_Home_Test"></exclude>
-      <exclude name="Previous_PRA_Test"></exclude>
-      <exclude name="Regulated_Pest_Test"></exclude>
+      
       
       
       

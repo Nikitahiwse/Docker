@@ -1,19 +1,26 @@
 package config;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
+import java.util.UUID;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class PRA_Base 
 {
 	    static Properties prop;
 	    static Properties prop2;
 	    public static WebDriver wd;
+	    public static File folder;
 	    //to load data from property file
 		public static void load_property_file() throws IOException
 		{
@@ -49,9 +56,26 @@ public class PRA_Base
 
         //for browser opening 
 	   public void initialzation(String URL) throws InterruptedException
-	   {
+	   {   
+		   
+		folder=new File(UUID.randomUUID().toString());
+		folder.mkdir();
+		 
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
-		wd=new ChromeDriver();
+		
+		//for chrome
+		ChromeOptions option=new ChromeOptions();
+		
+		Map<String, Object> prefs=new HashMap<String, Object>();
+		
+		prefs.put("profile.default_content_settings.popups", 0);
+		prefs.put("download.default_directory", folder.getAbsolutePath());
+		option.setExperimentalOption("prefs", prefs);
+		DesiredCapabilities cap=DesiredCapabilities.chrome();
+		cap.setCapability(ChromeOptions.CAPABILITY, option);
+		
+		
+		wd=new ChromeDriver(cap);
 		wd.get(URL);
 		Thread.sleep(8000);
 		wd.manage().window().maximize();
@@ -61,5 +85,10 @@ public class PRA_Base
 	    {
 		
 		wd.close();
+		for(File file:folder.listFiles())
+		{
+			file.delete();
+		}
+		folder.delete();
 		}
 }

@@ -1,5 +1,6 @@
 package pra_child_classes;
 
+import java.io.File;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -76,7 +77,7 @@ public class Bypest_Probability_of_entry extends PRA_Home{
 		logger19.log(Status.PASS, sub_heading_text+" is opened");
 		Thread.sleep(3000);
 		add_pathway_button.click();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		logger19.log(Status.PASS, "Add Pathway button got clicked");
 		if(pathwayname.equalsIgnoreCase("Seeds for planting"))
 		{
@@ -100,7 +101,7 @@ public class Bypest_Probability_of_entry extends PRA_Home{
 		
 		add_pathway_button.click();
 		
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		logger19.log(Status.PASS, "Add Pathway button got clicked");
 		Select s=new Select(select_pathway);
 		s.selectByVisibleText(pathwayname);
@@ -198,6 +199,7 @@ public class Bypest_Probability_of_entry extends PRA_Home{
 		wd.switchTo().defaultContent();
 		Thread.sleep(3000);
 		save_btn.click();
+		Thread.sleep(8000);
 		logger19.log(Status.PASS, "Save button got clicked and pathway added successfully");
 		
 	}
@@ -304,11 +306,81 @@ public class Bypest_Probability_of_entry extends PRA_Home{
 		risk_assessment_tab.click();
 		Thread.sleep(3000);
 		logger19.log(Status.PASS, "Risk assessment tab got clicked");
-		if(pathwayname.equalsIgnoreCase("Seeds for planting"))
-		{
-		home.click();
-		Thread.sleep(3000);
-		}
+		
 	}
+	
+	@FindBy(xpath = "//a[@class='btn btn-pra-red' and text()=' Export to Word']")WebElement Export;
+	@FindBy(xpath="//a[@class='btn btn-pra-red' and text()=' Import from Word']")WebElement import_file;
+	@FindBy(xpath="//input[@id='ImportFile']")WebElement choose_file;
+	@FindBy(linkText="Upload")WebElement upload;
+	@FindBy(xpath="//span[@id='ImportFile-error']")WebElement import_file_error;
+	@FindBy(xpath="//input[@value='Cancel']")WebElement cancel_btn;
+	@FindBy(xpath="//div[@class='col-sm-12']//p[@class='margin-bottom-30 about message1']")WebElement warning_message;
+	@FindBy(xpath="//input[@class='btn btn-pra-red' and @value='Continue']")WebElement continue_button;
+	@FindBy(xpath="//input[@class='btn btn-default' and @value='OK']")WebElement ok;
+	public void export_import() throws InterruptedException
+	{
+		
+		
+		logger19.log(Status.PASS, "----------------Import Export Test-------------");
+		Thread.sleep(3000);
+		Export.click();
+		Thread.sleep(5000);
+		logger19.log(Status.PASS, "File is exported successfully");
+		
+		import_file.click();
+		Thread.sleep(2000);
+		
+		upload.click();
+		Thread.sleep(1000);
+		
+		String error_text=import_file_error.getText();
+		if(error_text.equalsIgnoreCase("Select file to upload"))
+		{
+			logger19.log(Status.PASS, " Error should present withoud selecting any file- "+error_text);
+		}
+		Thread.sleep(1000);
+		
+		choose_file.sendKeys(System.getProperty("user.dir")+"\\Import_files\\Wordform template for pestname_abc.docx");
+			
+		Thread.sleep(3000);
+		upload.click();
+		Thread.sleep(5000);
+		String warning_msg=warning_message.getText();
+		logger19.log(Status.PASS, "Warning message should display "+ warning_msg );
+		Thread.sleep(3000);
+		cancel_btn.click();
+		Thread.sleep(3000);
+		upload.click();
+		Thread.sleep(2000);
+		logger19.log(Status.PASS, "File is uploded successfully");
+		continue_button.click();
+		Thread.sleep(2000);
+		String text_war=wd.findElement(By.xpath("//div[@class='col-sm-12']//p[@class='margin-bottom-20 about message']")).getText();
+		logger19.log(Status.PASS, "Error message is -"+ text_war);
+		
+		
+		logger19.log(Status.PASS, "File is not imported");
+		Thread.sleep(3000);
+		ok.click();
+		Thread.sleep(2000);
+		wd.findElement(By.xpath("//div[@id='modalimportassessment']//div[@class='modal-header']//button[@class='close pull-right']")).click();
+		
+		
+		
+	}
+	@FindBy(xpath="//input[@class='btn btn-pra-red' and @value='Next']")WebElement next;
+	@FindBy(xpath="//input[@class='btn btn-pra-green' and @value='Save']")WebElement save;
+	public void save() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		save.click();
+		Thread.sleep(2000);
+		next.click();
+		Thread.sleep(2000);
+	}
+	
+	
+	
 
 }
