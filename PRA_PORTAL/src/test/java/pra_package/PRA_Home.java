@@ -34,7 +34,7 @@ public class PRA_Home extends PRA_Base{
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,Logger7,Logger8,Logger9,Logger10,Logger11,Logger12,Logger13,Logger14,Logger15;
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,Logger7,Logger8,Logger9,Logger10,Logger11,Logger12,Logger13,Logger14,Logger15,Logger25;
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
@@ -70,7 +70,7 @@ public class PRA_Home extends PRA_Base{
 			
 	
 	
-	//@Test(priority = 4)
+	@Test(priority = 4)
 	void gmail_verification()
 	{
 		HashMap<String, String> hm = GMail.getGmailData("subject:You have been invited to join: Testing 9 in the CABI Pest Risk Analysis Tool.");
@@ -89,7 +89,7 @@ public class PRA_Home extends PRA_Base{
 	}
 	
 	
-	@Test(priority = 4)
+	@Test(priority = 9)
 	void pathway_creation() throws Throwable
 	{
 		ByPathway pathway = PageFactory.initElements(wd, ByPathway.class);
@@ -99,42 +99,44 @@ public class PRA_Home extends PRA_Base{
 		pathway.generate_full_list();
 	}
 	
-	@Test(priority = 5)
-	void risk_assessments() throws Throwable
+	@Test(priority = 10)
+	void By_pathway_risk_assessments() throws Throwable
 	{
 		Pathway_RiskAssessments path = PageFactory.initElements(wd, Pathway_RiskAssessments.class);
 		path.rapid_assessments();
 		path.full_risk_assessment();
 	}
 	
-	@Test(priority = 6)
-	void actions() throws Throwable
+	@Test(priority = 11)
+	void By_pathway_risk_assessments_actions() throws Throwable
 	{
 		User_Action action= PageFactory.initElements(wd, User_Action.class);
 		action.perform_action();
 		action.export_import_pest();
 	}
 	
-	@Test(priority = 7)
-	void pestrisk() throws Throwable
+	@Test(priority = 12)
+	void By_pathway_pestrisk() throws Throwable
 	{
 		PestRisk_Management pest= PageFactory.initElements(wd, PestRisk_Management.class);
 		pest.pest_management(getobject("cpc_username"),getobject("cpc_password"));
 		pest.risk_management();
 	}
 	
-	@Test(priority = 8)
-	 void summaryscreen() throws Throwable
+	@Test(priority = 13)
+	 void By_pathway_summaryscreen() throws Throwable
 	 {
 		Summary_Screen screen= PageFactory.initElements(wd, Summary_Screen.class);
 		screen.summary_content();
 	 }
 	
-	@Test(priority = 9)
-	void report_generation() throws Throwable
+	@Test(priority = 14)
+	void By_pathway_report_generation() throws Throwable
 	{
 		Generate_Report report=PageFactory.initElements(wd, Generate_Report.class);
 		report.generate_pra_report();
+		report.Delete_PRA("AutomationList");
+		report.Delete_PRA("AutomationGroup");
 	}
 	
 	
@@ -147,8 +149,8 @@ public class PRA_Home extends PRA_Base{
 			{
 			String temp=Utility.attachscreenshotreport(wd, result.getName());
 		
-			Logger15.fail("Testcase name"+ result.getName());
-			Logger15.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+			Logger25.fail("Testcase name"+ result.getName());
+			Logger25.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		    }}
 			catch(Exception e)
 			{

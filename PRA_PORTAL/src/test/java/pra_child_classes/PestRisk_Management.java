@@ -158,24 +158,24 @@ public class PestRisk_Management extends PRA_Home {      //Apate monachus (black
 				  System.out.println("child window title is"+wd.getTitle());
 				 
 				  
-				 // Thread.sleep(3000); 
-				  //wd.switchTo().frame(iframe);
+				/*  Thread.sleep(3000); 
+				  wd.switchTo().frame(iframe);
 				  
-				//  Thread.sleep(3000);  
-				   // Log_in_via_email_username.click();  
-				   // Logger12.log(Status.PASS, "Log_in email_username tab should get clicked");
+				  Thread.sleep(3000);  
+				   Log_in_via_email_username.click();  
+				   Logger12.log(Status.PASS, "Log_in email_username tab should get clicked");
 					  
-					//Thread.sleep(3000);
-				//	username.sendKeys(cpc_username);
-					//Logger12.log(Status.PASS, "Enter Username");
+					Thread.sleep(3000);
+					username.sendKeys(cpc_username);
+					Logger12.log(Status.PASS, "Enter Username");
 					  
-				//	Thread.sleep(2000);
-				//	password.sendKeys(cpc_password);
-				//	Logger12.log(Status.PASS, "Enter Password");
+					Thread.sleep(2000);
+					password.sendKeys(cpc_password);
+					Logger12.log(Status.PASS, "Enter Password");
 					  
-					//Thread.sleep(4000); 
-				//	login.click();
-				//	Logger12.log(Status.PASS, "Login button clicked Successfully");
+					Thread.sleep(4000); 
+					login.click();
+					Logger12.log(Status.PASS, "Login button clicked Successfully"); */
 					 
 					Thread.sleep(8000);
 					wd.close();

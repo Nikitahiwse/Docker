@@ -17,7 +17,8 @@ public void testcase_creation()
 	Logger12=extent.createTest("Pest Risk Management"); 
 	Logger13=extent.createTest("Summary Analysis"); 
 	Logger14=extent.createTest("Report Generation"); 
-	Logger15=extent.createTest("Screenshot for failed testcase");
+	Logger15=extent.createTest("Delete PRA ByPathway Test"); 
+	Logger25=extent.createTest("Screenshot for failed testcase");
 	
 }
 }

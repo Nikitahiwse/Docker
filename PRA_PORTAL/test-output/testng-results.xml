@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="636038" started-at="2020-12-16T08:48:18 IST" finished-at="2020-12-16T08:58:54 IST">
+  <suite name="Default suite" duration-ms="657266" started-at="2020-12-17T17:25:59 IST" finished-at="2020-12-17T17:36:56 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="636038" started-at="2020-12-16T08:48:18 IST" finished-at="2020-12-16T08:58:54 IST">
+    <test name="Default test" duration-ms="657266" started-at="2020-12-17T17:25:59 IST" finished-at="2020-12-17T17:36:56 IST">
       <class name="pra_package.PRA_Home">
-        <test-method status="PASS" signature="initialization_browser_opening()[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="initialization_browser_opening" is-config="true" duration-ms="66879" started-at="2020-12-16T08:47:11 IST" finished-at="2020-12-16T08:48:18 IST">
+        <test-method status="PASS" signature="initialization_browser_opening()[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="initialization_browser_opening" is-config="true" duration-ms="70442" started-at="2020-12-17T17:24:48 IST" finished-at="2020-12-17T17:25:59 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization_browser_opening -->
-        <test-method status="PASS" signature="title_verification()[pri:1, instance:pra_package.PRA_Home@1b68b9a4]" name="title_verification" duration-ms="9022" started-at="2020-12-16T08:48:18 IST" finished-at="2020-12-16T08:48:27 IST">
+        <test-method status="PASS" signature="title_verification()[pri:1, instance:pra_package.PRA_Home@1b68b9a4]" name="title_verification" duration-ms="9023" started-at="2020-12-17T17:25:59 IST" finished-at="2020-12-17T17:26:08 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- title_verification -->
-        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="4" started-at="2020-12-16T08:48:27 IST" finished-at="2020-12-16T08:48:27 IST">
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="3" started-at="2020-12-17T17:26:08 IST" finished-at="2020-12-17T17:26:08 IST">
           <params>
             <param index="0">
               <value>
@@ -26,11 +26,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method status="PASS" signature="login_Test()[pri:2, instance:pra_package.PRA_Home@1b68b9a4]" name="login_Test" duration-ms="27033" started-at="2020-12-16T08:48:27 IST" finished-at="2020-12-16T08:48:54 IST">
+        <test-method status="PASS" signature="login_Test()[pri:2, instance:pra_package.PRA_Home@1b68b9a4]" name="login_Test" duration-ms="24853" started-at="2020-12-17T17:26:08 IST" finished-at="2020-12-17T17:26:33 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login_Test -->
-        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-16T08:48:54 IST" finished-at="2020-12-16T08:48:54 IST">
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-17T17:26:33 IST" finished-at="2020-12-17T17:26:33 IST">
           <params>
             <param index="0">
               <value>
@@ -41,11 +41,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method status="PASS" signature="pathway_creation()[pri:4, instance:pra_package.PRA_Home@1b68b9a4]" name="pathway_creation" duration-ms="112712" started-at="2020-12-16T08:48:54 IST" finished-at="2020-12-16T08:50:47 IST">
+        <test-method status="PASS" signature="gmail_verification()[pri:4, instance:pra_package.PRA_Home@1b68b9a4]" name="gmail_verification" duration-ms="4924" started-at="2020-12-17T17:26:33 IST" finished-at="2020-12-17T17:26:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gmail_verification -->
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-17T17:26:37 IST" finished-at="2020-12-17T17:26:37 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=gmail_verification status=SUCCESS method=PRA_Home.gmail_verification()[pri:4, instance:pra_package.PRA_Home@1b68b9a4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fail_testcase -->
+        <test-method status="PASS" signature="pathway_creation()[pri:4, instance:pra_package.PRA_Home@1b68b9a4]" name="pathway_creation" duration-ms="109033" started-at="2020-12-17T17:26:37 IST" finished-at="2020-12-17T17:28:27 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pathway_creation -->
-        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-16T08:50:47 IST" finished-at="2020-12-16T08:50:47 IST">
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-17T17:28:27 IST" finished-at="2020-12-17T17:28:27 IST">
           <params>
             <param index="0">
               <value>
@@ -56,11 +71,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method status="PASS" signature="risk_assessments()[pri:5, instance:pra_package.PRA_Home@1b68b9a4]" name="risk_assessments" duration-ms="114918" started-at="2020-12-16T08:50:47 IST" finished-at="2020-12-16T08:52:42 IST">
+        <test-method status="PASS" signature="risk_assessments()[pri:5, instance:pra_package.PRA_Home@1b68b9a4]" name="risk_assessments" duration-ms="113361" started-at="2020-12-17T17:28:27 IST" finished-at="2020-12-17T17:30:20 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- risk_assessments -->
-        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="0" started-at="2020-12-16T08:52:42 IST" finished-at="2020-12-16T08:52:42 IST">
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-17T17:30:20 IST" finished-at="2020-12-17T17:30:20 IST">
           <params>
             <param index="0">
               <value>
@@ -71,11 +86,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method status="PASS" signature="actions()[pri:6, instance:pra_package.PRA_Home@1b68b9a4]" name="actions" duration-ms="143799" started-at="2020-12-16T08:52:42 IST" finished-at="2020-12-16T08:55:05 IST">
+        <test-method status="PASS" signature="actions()[pri:6, instance:pra_package.PRA_Home@1b68b9a4]" name="actions" duration-ms="142378" started-at="2020-12-17T17:30:20 IST" finished-at="2020-12-17T17:32:42 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actions -->
-        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="0" started-at="2020-12-16T08:55:05 IST" finished-at="2020-12-16T08:55:05 IST">
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="2" started-at="2020-12-17T17:32:42 IST" finished-at="2020-12-17T17:32:42 IST">
           <params>
             <param index="0">
               <value>
@@ -86,11 +101,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method status="PASS" signature="pestrisk()[pri:7, instance:pra_package.PRA_Home@1b68b9a4]" name="pestrisk" duration-ms="97474" started-at="2020-12-16T08:55:05 IST" finished-at="2020-12-16T08:56:43 IST">
+        <test-method status="PASS" signature="pestrisk()[pri:7, instance:pra_package.PRA_Home@1b68b9a4]" name="pestrisk" duration-ms="98615" started-at="2020-12-17T17:32:42 IST" finished-at="2020-12-17T17:34:21 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pestrisk -->
-        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="3" started-at="2020-12-16T08:56:43 IST" finished-at="2020-12-16T08:56:43 IST">
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-17T17:34:21 IST" finished-at="2020-12-17T17:34:21 IST">
           <params>
             <param index="0">
               <value>
@@ -101,11 +116,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method status="PASS" signature="summaryscreen()[pri:8, instance:pra_package.PRA_Home@1b68b9a4]" name="summaryscreen" duration-ms="52516" started-at="2020-12-16T08:56:43 IST" finished-at="2020-12-16T08:57:35 IST">
+        <test-method status="PASS" signature="summaryscreen()[pri:8, instance:pra_package.PRA_Home@1b68b9a4]" name="summaryscreen" duration-ms="52866" started-at="2020-12-17T17:34:21 IST" finished-at="2020-12-17T17:35:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- summaryscreen -->
-        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-16T08:57:36 IST" finished-at="2020-12-16T08:57:36 IST">
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-17T17:35:14 IST" finished-at="2020-12-17T17:35:14 IST">
           <params>
             <param index="0">
               <value>
@@ -116,11 +131,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method status="PASS" signature="report_generation()[pri:9, instance:pra_package.PRA_Home@1b68b9a4]" name="report_generation" duration-ms="78460" started-at="2020-12-16T08:57:36 IST" finished-at="2020-12-16T08:58:54 IST">
+        <test-method status="PASS" signature="report_generation()[pri:9, instance:pra_package.PRA_Home@1b68b9a4]" name="report_generation" duration-ms="102119" started-at="2020-12-17T17:35:14 IST" finished-at="2020-12-17T17:36:56 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- report_generation -->
-        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="4" started-at="2020-12-16T08:58:54 IST" finished-at="2020-12-16T08:58:54 IST">
+        <test-method status="PASS" signature="fail_testcase(org.testng.ITestResult)[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="fail_testcase" is-config="true" duration-ms="1" started-at="2020-12-17T17:36:56 IST" finished-at="2020-12-17T17:36:56 IST">
           <params>
             <param index="0">
               <value>
@@ -131,7 +146,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fail_testcase -->
-        <test-method status="PASS" signature="teardown_browerclosing()[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="teardown_browerclosing" is-config="true" duration-ms="1385" started-at="2020-12-16T08:58:54 IST" finished-at="2020-12-16T08:58:55 IST">
+        <test-method status="PASS" signature="teardown_browerclosing()[pri:0, instance:pra_package.PRA_Home@1b68b9a4]" name="teardown_browerclosing" is-config="true" duration-ms="1384" started-at="2020-12-17T17:36:56 IST" finished-at="2020-12-17T17:36:57 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown_browerclosing -->

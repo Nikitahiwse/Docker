@@ -105,10 +105,10 @@ public class ByPathway extends PRA_Home {
 		Logger9.log(Status.PASS, "Area where PRA is being conducted");
 		
 		transport.sendKeys("Airlines");
-		Logger9.log(Status.PASS, "Modes of transport selected");
+		Logger9.log(Status.PASS, "Modes of transport should be entered");
 		
 		quantity.sendKeys("50 tns");	
-		Logger9.log(Status.PASS, "Quantity selected");
+		Logger9.log(Status.PASS, "Quantity entered successfully");
 		
 		Thread.sleep(2000);
 		exportcountry.click();
@@ -134,11 +134,11 @@ public class ByPathway extends PRA_Home {
 		
 		Thread.sleep(3000);
 		leaves.click();
-		Logger9.log(Status.PASS, "Commodity selected successfully");
+		Logger9.log(Status.PASS, "leaves checkbox selected successfully");
 		
 		Thread.sleep(3000);
 		note.sendKeys("commodity selected");
-		Logger9.log(Status.PASS, "Notes written if any");
+		Logger9.log(Status.PASS, "Notes should be written if any");
 		
 		Thread.sleep(3000);
 		button.click();
@@ -157,22 +157,22 @@ public class ByPathway extends PRA_Home {
 	public void group_of_pest() throws Throwable
 	{
 		group_button.click();
-		Logger9.log(Status.PASS, "Group of pest button selected");
+		Logger9.log(Status.PASS, "Group of pest button clicked successfully");
 		
 		Thread.sleep(3000);
 		plant.click();
-		Logger9.log(Status.PASS, "plant unchecked");
+		Logger9.log(Status.PASS, "plant checkbox should get unchecked");
 		
 		Thread.sleep(3000);
 		virus.click();
-		Logger9.log(Status.PASS, "virus unchecked");
+		Logger9.log(Status.PASS, "virus checkbox should get unchecked");
 		
 		Thread.sleep(3000);
 		Fungi.click();
-		Logger9.log(Status.PASS, "Fungi unchecked");
+		Logger9.log(Status.PASS, "Fungi checkbox should get unchecked");
 		Thread.sleep(3000);
 		invertebrates.click();
-		Logger9.log(Status.PASS, "Invertebrates unchecked");
+		Logger9.log(Status.PASS, "Invertebrates checkbox should get unchecked");
 		
 		Thread.sleep(3000);
 		confirm_selection.click();
@@ -192,7 +192,7 @@ public class ByPathway extends PRA_Home {
 	public void generate_full_list() throws Throwable
 	{
 		full_list.click();
-		Logger9.log(Status.PASS, "full List Button got clicked successfully");
+		Logger9.log(Status.PASS, "Full List Button got clicked successfully");
 		Thread.sleep(5000);
 	}
 	

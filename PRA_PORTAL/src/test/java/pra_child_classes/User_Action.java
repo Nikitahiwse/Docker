@@ -191,7 +191,7 @@ public class User_Action extends PRA_Home {
 		Logger11.log(Status.PASS, "Import Assessment Option should be clicked");
 		
 		Thread.sleep(3000);
-		choose_file.sendKeys("C:\\Users\\hp\\Downloads\\Wordform template for Cuscuta reflexa (dodder) (4).docx");
+		choose_file.sendKeys("E:\\CABI_NEW\\PRA_PORTAL\\Documents\\Wordform template for Cuscuta reflexa (dodder) (4).docx");
 		Logger11.log(Status.PASS, "File Path Passed");
 		
 		Thread.sleep(5000);
@@ -218,7 +218,7 @@ public class User_Action extends PRA_Home {
 		Logger11.log(Status.PASS, "Import Assessment Option should be clicked");
 		
 		Thread.sleep(3000);
-		choose_correctfile_import.sendKeys("C:\\Users\\hp\\Downloads\\Wordform template for Cuscuta reflexa (dodder) (4).docx");
+		choose_correctfile_import.sendKeys("E:\\CABI_NEW\\PRA_PORTAL\\Documents\\Wordform template for Cuscuta reflexa (dodder) (4).docx");
 		Logger11.log(Status.PASS, "File path Should Be Passed Which we Want to Upload");
 		
 		Thread.sleep(5000);

@@ -165,11 +165,11 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	public void rapid_assessments() throws Throwable {
 		Thread.sleep(3000);
 		select_assessment.click();
-		Logger10.log(Status.PASS, "Assessment selected(Peach twig borer)");
+		Logger10.log(Status.PASS, "Assessment selected successfully(Peach twig borer)");
 		
 		Thread.sleep(3000);
 		rapid_assessment.click();
-		Logger10.log(Status.PASS, "Rapid Assessment button clicked successfully");
+		Logger10.log(Status.PASS, "Rapid Assessment button got clicked successfully");
 		
 		Thread.sleep(2000);
 		potential_for_establishment_option.click();
@@ -201,7 +201,7 @@ public class Pathway_RiskAssessments extends PRA_Home{
 		
 		Thread.sleep(3000);
 		select_black_borer.click();
-		Logger10.log(Status.PASS, " Apate monachus Assessment selected(black borer)");
+		Logger10.log(Status.PASS, "Assessment selected successfully");
 		
 		Thread.sleep(2000);
 		rapid_assessment_button.click();
@@ -240,7 +240,7 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	{
 		Thread.sleep(3000);
 		Apate_monachus_assessment.click();
-		Logger10.log(Status.PASS, " Apate monachus Assessment selected(black borer)");
+		Logger10.log(Status.PASS, " Apate monachus Assessment selected successfully");
 		
 		Thread.sleep(3000);
 		Full_Assessment.click();
