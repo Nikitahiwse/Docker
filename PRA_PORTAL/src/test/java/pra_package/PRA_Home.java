@@ -2,7 +2,7 @@ package pra_package;
 
 import java.io.File;
 import java.io.IOException;
-
+import java.util.HashMap;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -18,8 +18,10 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import GmailAPiLib.GMail;
 import config.PRA_Base;
 import library.Utility;
+
 import pra_child_classes.Banner_footer_PRA;
 import pra_child_classes.ByPest_categorization;
 import pra_child_classes.ByPest_initiation;
@@ -34,14 +36,25 @@ import pra_child_classes.Previous_PRA;
 import pra_child_classes.Regulated_Pest_list;
 import pra_child_classes.Risk_assessment;
 import pra_child_classes.Risk_management;
+import pra_child_classes.ByPathway;
+import pra_child_classes.Generate_Report;
+import pra_child_classes.Home;
+import pra_child_classes.Login;
+import pra_child_classes.Pathway_RiskAssessments;
+import pra_child_classes.PestRisk_Management;
+import pra_child_classes.Summary_Screen;
 import pra_child_classes.Testcases_for_Home_report;
 import pra_child_classes.Title_verification;
+import pra_child_classes.User_Action;
 
 public class PRA_Home extends PRA_Base{
+	
 
 	public static ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./PRA_Report/home.html");
 	public static ExtentReports extent = new ExtentReports();
-	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7,logger8,logger17,logger18,logger19,logger20,logger21,logger22,logger23,logger24,logger25;
+
+	public static ExtentTest logger1,logger2,logger3,logger4,logger5,logger6,logger7,logger8,Logger9,Logger10,Logger11,Logger12,Logger13,Logger14,Logger15,logger17,logger18,logger19,logger20,logger21,logger22,logger23,logger24,logger25;
+
 	
 	@BeforeSuite
 	void initialization_browser_opening() throws InterruptedException, IOException
@@ -57,6 +70,8 @@ public class PRA_Home extends PRA_Base{
 		//Title_verification title=new Title_verification();
 		Title_verification.website_title_verification("Pest Risk Analysis Tool");
 	}
+	
+	
 	@Test(priority=2)
 	void login_Test() throws InterruptedException, IOException
 	{
@@ -64,6 +79,7 @@ public class PRA_Home extends PRA_Base{
         log.login_to_cpc(getobject("cpc_username"),getobject("cpc_password"));
 	    log.login_to_mycabi(getobject("mycabi_username"),getobject("mycabi_password"));
 	}
+
 
 	
 	//@Test(priority=3)
@@ -74,6 +90,24 @@ public class PRA_Home extends PRA_Base{
 		
 		
 	}
+	@Test(priority = 4)
+	void gmail_verification()
+	{
+		HashMap<String, String> hm = GMail.getGmailData("subject:You have been invited to join: Testing 9 in the CABI Pest Risk Analysis Tool.");
+        System.out.println(hm.get("subject"));
+        System.out.println("=================");
+        System.out.println(hm.get("body"));
+        System.out.println("=================");
+        System.out.println(hm.get("link"));
+        
+        System.out.println("=================");
+        System.out.println("Total count of emails is :"+GMail.getTotalCountOfMails());
+        
+        System.out.println("=================");
+        boolean exist = GMail.isMailExist("You have been invited to join: Testing 9 in the CABI Pest Risk Analysis Tool.");
+        System.out.println("title exist or not: " + exist);
+	}
+	
 	@Test(priority = 5)
 	void Banner_footer() throws InterruptedException
 	{
@@ -110,6 +144,60 @@ public class PRA_Home extends PRA_Base{
 		regulated.pagination();
 		regulated.regulated_filter();
 	}
+	
+	@Test(priority = 9)
+	void pathway_creation() throws Throwable
+	{
+		ByPathway pathway = PageFactory.initElements(wd, ByPathway.class);
+		pathway.Initiation(getobject("ByPathway_Title_Group"));
+		pathway.group_of_pest();
+		pathway.Initiation(getobject("ByPathway_Title_List"));
+		pathway.generate_full_list();
+	}
+	
+	@Test(priority = 10)
+	void By_pathway_risk_assessments() throws Throwable
+	{
+		Pathway_RiskAssessments path = PageFactory.initElements(wd, Pathway_RiskAssessments.class);
+		path.rapid_assessments();
+		path.full_risk_assessment();
+	}
+	
+	@Test(priority = 11)
+	void By_pathway_risk_assessments_actions() throws Throwable
+	{
+		User_Action action= PageFactory.initElements(wd, User_Action.class);
+		action.perform_action();
+		action.export_import_pest();
+	}
+	
+	@Test(priority = 12)
+	void By_pathway_pestrisk() throws Throwable
+	{
+		PestRisk_Management pest= PageFactory.initElements(wd, PestRisk_Management.class);
+		pest.pest_management(getobject("cpc_username"),getobject("cpc_password"));
+		pest.risk_management();
+	}
+	
+	@Test(priority = 13)
+	 void By_pathway_summaryscreen() throws Throwable
+	 {
+		Summary_Screen screen= PageFactory.initElements(wd, Summary_Screen.class);
+		screen.summary_content();
+	 }
+	
+	@Test(priority = 14)
+	void By_pathway_report_generation() throws Throwable
+	{
+		Generate_Report report=PageFactory.initElements(wd, Generate_Report.class);
+		report.generate_pra_report();
+		report.Delete_PRA("AutomationList");
+		report.Delete_PRA("AutomationGroup");
+	
+	}
+	
+	
+	
 	@Test(priority = 15)
 	void By_pest_initiation() throws InterruptedException, IOException
 	{
@@ -195,12 +283,15 @@ public class PRA_Home extends PRA_Base{
 	void fail_testcase(ITestResult result)
 	{
 		try {
+			
 			if(ITestResult.FAILURE==result.getStatus())
 			{
 			String temp=Utility.attachscreenshotreport(wd, result.getName());
 		
+
 			logger25.fail("Testcase name"+ result.getName());
 			logger25.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+
 		    }}
 			catch(Exception e)
 			{

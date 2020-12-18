@@ -18,7 +18,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class PRA_Base 
 {
 	    static Properties prop;
-	    static Properties prop2;
+	    
 	    public static WebDriver wd;
 	    public static File folder;
 	    //to load data from property file
@@ -33,8 +33,16 @@ public class PRA_Base
 		InputStream input2=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config\\mycabi.properties");
 		prop.load(input2);
 		
-		InputStream input4=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config\\By_pest.properties");
+
+		InputStream input3=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config\\By_pest.properties");
+		prop.load(input3);
+		
+		InputStream input4=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config\\ByPathway_Generation.properties");
 		prop.load(input4);
+		
+		
+	  
+
 	     } catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -56,6 +64,7 @@ public class PRA_Base
 
         //for browser opening 
 	   public void initialzation(String URL) throws InterruptedException
+
 	   {   
 		   
 		folder=new File(UUID.randomUUID().toString());
@@ -90,5 +99,6 @@ public class PRA_Base
 			file.delete();
 		}
 		folder.delete();
+
 		}
 }
