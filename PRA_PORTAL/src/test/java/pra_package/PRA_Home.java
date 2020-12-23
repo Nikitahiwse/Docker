@@ -90,7 +90,7 @@ public class PRA_Home extends PRA_Base{
 		
 		
 	}
-	@Test(priority = 4)
+	//@Test(priority = 4)
 	void gmail_verification()
 	{
 		HashMap<String, String> hm = GMail.getGmailData("subject:You have been invited to join: Testing 9 in the CABI Pest Risk Analysis Tool.");
@@ -134,7 +134,7 @@ public class PRA_Home extends PRA_Base{
 		previous.filter();
 		
 	}
-	@Test(priority = 8)
+    @Test(priority = 8)
 	void Regulated_Pest_Test() throws InterruptedException
 	{
 		Regulated_Pest_list regulated=PageFactory.initElements(wd, Regulated_Pest_list.class);
@@ -155,7 +155,7 @@ public class PRA_Home extends PRA_Base{
 		pathway.generate_full_list();
 	}
 	
-	@Test(priority = 10)
+	//@Test(priority = 10)
 	void By_pathway_risk_assessments() throws Throwable
 	{
 		Pathway_RiskAssessments path = PageFactory.initElements(wd, Pathway_RiskAssessments.class);
@@ -163,7 +163,7 @@ public class PRA_Home extends PRA_Base{
 		path.full_risk_assessment();
 	}
 	
-	@Test(priority = 11)
+     //@Test(priority = 11)
 	void By_pathway_risk_assessments_actions() throws Throwable
 	{
 		User_Action action= PageFactory.initElements(wd, User_Action.class);
@@ -171,7 +171,7 @@ public class PRA_Home extends PRA_Base{
 		action.export_import_pest();
 	}
 	
-	@Test(priority = 12)
+	//@Test(priority = 12)
 	void By_pathway_pestrisk() throws Throwable
 	{
 		PestRisk_Management pest= PageFactory.initElements(wd, PestRisk_Management.class);
@@ -179,14 +179,14 @@ public class PRA_Home extends PRA_Base{
 		pest.risk_management();
 	}
 	
-	@Test(priority = 13)
+	//@Test(priority = 13)
 	 void By_pathway_summaryscreen() throws Throwable
 	 {
 		Summary_Screen screen= PageFactory.initElements(wd, Summary_Screen.class);
 		screen.summary_content();
 	 }
 	
-	@Test(priority = 14)
+	//@Test(priority = 14)
 	void By_pathway_report_generation() throws Throwable
 	{
 		Generate_Report report=PageFactory.initElements(wd, Generate_Report.class);

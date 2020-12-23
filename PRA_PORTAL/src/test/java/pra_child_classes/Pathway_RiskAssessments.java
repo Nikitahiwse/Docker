@@ -153,13 +153,6 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	WebElement save_return_pestlist;
 	
 	
-	
-	
-	
-	
-	
-	
-	
 	///Rapid Assessment With "NO" Option 
 	
 	public void rapid_assessments() throws Throwable {
@@ -167,11 +160,11 @@ public class Pathway_RiskAssessments extends PRA_Home{
 		select_assessment.click();
 		Logger10.log(Status.PASS, "Assessment selected successfully(Peach twig borer)");
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		rapid_assessment.click();
 		Logger10.log(Status.PASS, "Rapid Assessment button got clicked successfully");
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		potential_for_establishment_option.click();
 		Logger10.log(Status.PASS, "Clicked On First Option");
 		

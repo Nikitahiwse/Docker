@@ -58,7 +58,7 @@ public class Regulated_Pest_list extends PRA_Home {
 		logger8.log(Status.PASS, "lookup search for- apple");
 		Thread.sleep(2000);
 		search_pest.sendKeys(Keys.BACK_SPACE);
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 		List<WebElement>pests=wd.findElements(By.xpath("//li[@class='ui-menu-item']//a"));
 		int count=pests.size();
 		
@@ -91,7 +91,7 @@ public class Regulated_Pest_list extends PRA_Home {
 		ok.click();
 		Thread.sleep(5000);
 	}
-	@FindBy(xpath = "//div[@id='RegulatoryStatusDatagrid']//tr[1]//td[5]//a")WebElement user_action;
+	@FindBy(xpath = "//div[@id='RegulatoryStatusDatagrid']//tr[1]//td[6]//a")WebElement user_action;
 	@FindBy(xpath="//span[text()='Edit record']")WebElement edit;
 	@FindBy(xpath="//button[text()='Update']")WebElement update;
 	@FindBy(xpath="//button[text()='Ok']")WebElement ok_button;
@@ -162,7 +162,7 @@ public class Regulated_Pest_list extends PRA_Home {
 		logger8.log(Status.PASS, "User action got clicked");
 	
 		Delete.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		logger8.log(Status.PASS, "Delete option got selected");
 		
 		delete_button.click();
@@ -220,7 +220,8 @@ public class Regulated_Pest_list extends PRA_Home {
 		
 	}
 	
-	@FindBy(xpath="//div[@id='RegulatoryStatusDatagrid']//a[text()='Pest Name ']//a[@class='k-grid-filter']")WebElement pestname_filter;
+	@FindBy(xpath="//div[@id='RegulatoryStatusDatagrid']//a[text()='Pest name ']//a[@class='k-grid-filter']")WebElement pestname_filter;
+	@FindBy(xpath="//div[@id='RegulatoryStatusDatagrid']//a[text()='Type ']//a[@class='k-grid-filter']")WebElement type;
 	@FindBy(xpath="//div[@id='RegulatoryStatusDatagrid']//a[text()='Regulating country/area ']//a[@class='k-grid-filter']")WebElement Regulating_country_filter;
 	@FindBy(xpath="//div[@id='RegulatoryStatusDatagrid']//a[text()='Regulatory status ']//a[@class='k-grid-filter']")WebElement Regulatory_status_filter;
 	@FindBy(xpath="//div[@id='RegulatoryStatusDatagrid']//a[text()='Date last modified ']//a[@class='k-grid-filter']")WebElement Date_last_modified_filter;
@@ -230,9 +231,14 @@ public class Regulated_Pest_list extends PRA_Home {
 		logger8.log(Status.PASS,"---------------------Regulated Filter------------------------");
 		Thread.sleep(3000);
 		logger8.log(Status.PASS, "Pestname passed for Pest Name Filter- Pratylenchus rwandae");
-		Filter.regulated_pest_filter(pestname_filter,"Pratylenchus rwandae","Pest Name");
+		Filter.regulated_pest_filter(pestname_filter,"Pratylenchus rwandae","Pest name");
 		
 		Thread.sleep(1000); 
+		
+		logger8.log(Status.PASS, "Pest Type passed for Type Filter- Nematoda");
+		Filter.regulated_pest_filter(type,"Nematoda","Type");
+		Thread.sleep(1000);
+		
 		logger8.log(Status.PASS,"Country passed for Country/area Filter- United Kingdom");
 	    Filter.regulated_pest_filter(Regulating_country_filter,"United Kingdom","Regulating country/area");
 	    Thread.sleep(1000);
