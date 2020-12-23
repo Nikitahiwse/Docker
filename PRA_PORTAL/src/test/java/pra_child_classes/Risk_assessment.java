@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.aventstack.extentreports.Status;
 
-import jdk.jfr.internal.Logger;
+
 import pra_package.PRA_Home;
 
 public class Risk_assessment extends PRA_Home{

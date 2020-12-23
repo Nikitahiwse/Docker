@@ -29,7 +29,7 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	@FindBy(id="RapidAssessmentSections_RapidAssessmentQuestions_1__PotentialEconomicEtcConsequences")
 	WebElement option_2;
 	
-	@FindBy(xpath="//button[@class='btn btn-pra-red']")
+	@FindBy(xpath="(//button[@class='btn btn-pra-red'])[2]")
 	WebElement save;
 	
 	@FindBy(xpath="//button[@class='btn btn-pra-gray valid margin-top-20' and text()='No']")
@@ -56,7 +56,7 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	@FindBy(id="RapidAssessmentSections_RapidAssessmentQuestions_1__PotentialEconomicEtcConsequences")
 	WebElement select_option_2;
 	
-	@FindBy(xpath="//button[@class='btn btn-pra-red']")
+	@FindBy(xpath="(//button[@class='btn btn-pra-red'])[2]")
 	WebElement save_button;
 	
 	@FindBy(xpath="//button[@class='btn btn-pra-gray valid margin-top-20']")
