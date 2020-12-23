@@ -184,6 +184,7 @@ public class Filter extends PRA_Home{
 	
 	 public static void regulated_pest_filter(WebElement filter,String input_text,String active_filter_name ) throws InterruptedException
 	 {
+		 Thread.sleep(2000);
 		 filter.click();
 		 Thread.sleep(1000);
 		 WebElement filter_arrow=wd.findElement(By.xpath("//span[@class='k-icon k-i-arrow-60-down']"));
