@@ -16,7 +16,7 @@ public class Generate_Report extends PRA_Home {
 	@FindBy(linkText = "3. Pest risk analysis summary")
 	WebElement analysis_summary_tab;
 	
-	@FindBy(xpath = "//a[@class='nav-link' and @role='button']")
+	@FindBy(xpath = "//a[@class='nav-link introPRAReport']")
 	WebElement PRA_Report;
 	
 	@FindBy(xpath = "//*[@id=\"navbar-adv\"]/ul/li[1]/ul/li[1]/a")
@@ -26,7 +26,7 @@ public class Generate_Report extends PRA_Home {
 	WebElement download_word;
 	
 	
-	@FindBy(xpath = "//a[@class='nav-link' and @role='button']") 
+	@FindBy(xpath = "//a[@class='nav-link introPRAReport']") 
 	WebElement PRA_Full_Report;
 	  
 	@FindBy(xpath = "//*[@id=\"navbar-adv\"]/ul/li[1]/ul/li[3]/a") 

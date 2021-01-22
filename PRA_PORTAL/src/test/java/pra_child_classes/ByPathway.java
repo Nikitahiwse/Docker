@@ -49,9 +49,9 @@ public class ByPathway extends PRA_Home {
 	@FindBy(name="Notes")
 	WebElement note;
 	
-	@FindBy(xpath="//input[@type='button']")
+	@FindBy(xpath="//input[@value='Generate Pest List']")
 	WebElement button;
-	
+
 	
 	//Group of pest
 	
@@ -59,7 +59,7 @@ public class ByPathway extends PRA_Home {
 	@FindBy(xpath="//button[@class='btn btn-pra-red btn-generate-options btn-submit-form' and text()='Select groups of pests']")
 	WebElement group_button;
 	
-	@FindBy(xpath="//*[@id=\"tblAllCategory\"]/tbody/tr[1]/td/div/label/span")
+	@FindBy(xpath="//*[@id='tblAllCategory']/tbody/tr[1]/td/div/label/span")
 	WebElement plant;
 	
 	@FindBy(xpath="//*[@id=\"tblAllCategory\"]/tbody/tr[3]/td/div/label/span")
@@ -140,7 +140,7 @@ public class ByPathway extends PRA_Home {
 		note.sendKeys("commodity selected");
 		Logger9.log(Status.PASS, "Notes should be written if any");
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		button.click();
 		Logger9.log(Status.PASS, "Pest List Generated successfully");
 		

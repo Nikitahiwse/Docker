@@ -255,7 +255,7 @@ public class Filter extends PRA_Home{
 	 public static void result_after_filter_relulated(int i) throws InterruptedException
 	 {
 		 
-		 logger7.log(Status.PASS, "Filter Result for dropdown option "+i);
+		 logger8.log(Status.PASS, "Filter Result for dropdown option "+i);
 		 
 		 List<WebElement>attributes_of_regulated_pest=wd.findElements(By.xpath("//div[@id='RegulatoryStatusDatagrid']//td"));
 		 int count_regu=attributes_of_regulated_pest.size();
@@ -264,7 +264,7 @@ public class Filter extends PRA_Home{
 			 String text_no=wd.findElement(By.xpath("//div[@class='k-grid-norecords-template']")).getText();
 			 if(text_no.equalsIgnoreCase("No Regulatory Status"))
 			 {
-				 logger7.log(Status.PASS, text_no);
+				 logger8.log(Status.PASS, text_no);
 			 }
 			
 		 }
@@ -273,7 +273,7 @@ public class Filter extends PRA_Home{
 		 {
 			 
 			 String attribute_text=attribute.getText();
-			 logger7.log(Status.PASS, attribute_text);
+			 logger8.log(Status.PASS, attribute_text);
 		 }
 	 }
 	 
@@ -288,24 +288,37 @@ public class Filter extends PRA_Home{
 			String month_cal=wd.findElement(By.xpath("//div[@data-role='calendar']//a[@class='k-link k-nav-fast']")).getText();
 			 if(month_cal.equalsIgnoreCase(month))
 			 {
+				 System.out.println("outer loop"+ month_cal);
 				break; 
 			 }
 			 else
 			 {
 				 
 				 WebElement previous_icon=wd.findElement(By.xpath("//div[@data-role='calendar']//a[@class='k-link k-nav-prev']"));
-				 previous_icon.click(); 
-				 Thread.sleep(1000);
+				 for(int i=1;i<=11;i++)
+				 {
+				previous_icon.click();
+				Thread.sleep(1000);
+				String month_call=wd.findElement(By.xpath("//div[@data-role='calendar']//a[@class='k-link k-nav-fast']")).getText();
+				 if(month_call.equalsIgnoreCase(month))
+				 {
+				
+					break;
+				 }
+				 
+				   
+				 }
 			 }
 			 
-				 
-			 
+	 
 		 } 
+		 
 				
 			Thread.sleep(2000); 
 		 
 		 
 		 WebElement date=wd.findElement(By.xpath("//a[@data-value='2020/10/30']"));
+		 Thread.sleep(1000);
 		 date.click();
 		 
 		 

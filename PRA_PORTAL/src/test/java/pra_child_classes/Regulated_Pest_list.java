@@ -22,7 +22,7 @@ public class Regulated_Pest_list extends PRA_Home {
 	@FindBy(linkText = "My Team's Regulated Pest List")WebElement regulated_pest_list_tab;
 	@FindBy(xpath="//button[text()=' Add new pest ']")WebElement add_new_pest;
 	@FindBy(xpath="//input[@id='SearchPestName']")WebElement search_pest;
-	@FindBy(xpath="//li[@class='ui-menu-item']//a[text()='Aculus schlechtendali (apple rust mite)']")WebElement pest;
+	@FindBy(xpath="//li[@class='ui-menu-item']//a[text()='Aculus schlechtendali (']")WebElement pestapple;
 	@FindBy(xpath="//button[text()='Save']")WebElement save_button;
 	@FindBy(xpath="//button[@class='btn btn-pra-gray valid' and text()='Cancel']")WebElement cancel_button;
 	@FindBy(xpath="//div[@id='addeditpopupregulatory']//div[@class='modal-content']")WebElement dialogbox;
@@ -72,7 +72,7 @@ public class Regulated_Pest_list extends PRA_Home {
 		}
 		
 		Thread.sleep(1000);
-		pest.click();
+		pestapple.click();
 		
 		Thread.sleep(1000);
 		Select s1=new Select(wd.findElement(By.xpath("//select[@id='ImportCountryGeonameID']")));
@@ -246,7 +246,7 @@ public class Regulated_Pest_list extends PRA_Home {
 		Filter.regulated_pest_filter(Regulatory_status_filter, "2","Regulatory status"); 
 		Thread.sleep(1000); 
 		logger8.log(Status.PASS," Date passed for Date last modified Filter- 30/11/2020");
-	    Filter.regulated_pest_filter(Date_last_modified_filter,"30/11/2020","Date last modified"); 
+	    Filter.regulated_pest_filter(Date_last_modified_filter,"2020/10/30","Date last modified"); 
 	    Thread.sleep(1000);
 		System.out.println("HomePage Test is passed");
 	}

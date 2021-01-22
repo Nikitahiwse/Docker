@@ -11,7 +11,7 @@ import pra_package.PRA_Home;
 public class User_Action extends PRA_Home {
 	
 	
-	@FindBy(xpath="/html/body/div[2]/div[3]/div[4]/div/div/div[1]/div/div[5]/div[4]/div/table/thead/tr/th[1]/a/div/a")
+	@FindBy(xpath="(//a[@class='k-grid-filter'])[1]")
 	WebElement Risk_Assessment_Filter;
 	
 	@FindBy(xpath="//label[@class='k-label']//input[@value='4']")

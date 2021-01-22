@@ -18,7 +18,7 @@ public class ByPest_initiation extends PRA_Home{
 	@FindBy(linkText = "0_automation_PRA")WebElement team;
 	@FindBy(linkText = "By Pest")WebElement By_pest_button;
 	@FindBy(xpath="//input[@id='SearchPestName']")WebElement searchpestname;
-	@FindBy(xpath="//li[@class='ui-menu-item']//a[text()='Pratylenchus rwandae']")WebElement pratylenchus;
+	@FindBy(xpath="//li[@class='ui-menu-item']//a[text()=' rwandae']")WebElement pratylenchus;
 	@FindBy(xpath="//input[@id='PestName']")WebElement pestname;
 	@FindBy(xpath="//button[text()='Add']")WebElement add;
 	@FindBy(xpath="//a[@class='btn-remove']")WebElement remove;

@@ -68,6 +68,7 @@ public class PestRisk_Management extends PRA_Home {      //Apate monachus (black
 	@FindBy(xpath = "//a[@class='ga_UserActions_GoToAndCompleteRiskManagement']")
 	WebElement go_to_risk_management;
 	
+	//@FindBy(xpath="//*[@id=\"tab5\"]/div[1]/label/span")
 	@FindBy(xpath = "//input[@class='check-box' and @name='RiskManagementSections[0].RiskManagementQuestions[0].Selected']")
 	WebElement checkbox_selected;
 	
@@ -207,7 +208,7 @@ public class PestRisk_Management extends PRA_Home {      //Apate monachus (black
 					go_to_risk_management.click();
 					Logger12.log(Status.PASS, "go to risk management tab should be clicked");
 					
-					Thread.sleep(3000);
+					Thread.sleep(4000);
 					checkbox_selected.click();
 					Logger12.log(Status.PASS, "Checkbox should be got selected");
 					

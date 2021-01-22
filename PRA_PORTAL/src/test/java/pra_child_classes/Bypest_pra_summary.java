@@ -84,6 +84,10 @@ public class Bypest_pra_summary extends PRA_Home{
 		{
 			logger22.log(Status.PASS, "------Edit Next Steps------");
 		}
+		else if(n==3)
+		{
+			logger22.log(Status.PASS, "------Contact Details ------");
+		}
 		note.click();
 		Thread.sleep(2000);
 		logger22.log(Status.PASS,"Edit button got clicked textbox is opened");
@@ -95,7 +99,7 @@ public class Bypest_pra_summary extends PRA_Home{
 		logger22.log(Status.PASS, "Edit button got clicked again");
 		
 	
-	   wd.switchTo().frame(5);
+	   wd.switchTo().frame(6);
 		List<WebElement>textbox=wd.findElements(By.xpath("//body[@class='mce-content-body editor-body']//p"));
 		int t=1;
 		for(WebElement tbox:textbox)
