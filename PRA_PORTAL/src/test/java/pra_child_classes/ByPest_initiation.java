@@ -22,12 +22,14 @@ public class ByPest_initiation extends PRA_Home{
 	@FindBy(xpath="//input[@id='PestName']")WebElement pestname;
 	@FindBy(xpath="//button[text()='Add']")WebElement add;
 	@FindBy(xpath="//a[@class='btn-remove']")WebElement remove;
-	@FindBy(xpath="//div[@class='switch-field ']//label[text()='Yes']")WebElement yes_button_in;
-	
+	@FindBy(xpath="//div[@class='switch-field ']//label[text()='Yes']")WebElement yes_button;
+	@FindBy(xpath="//div[@class='form-group']//textarea[@id='DetailsPreviousPra']")WebElement details_previous_pra;
+	@FindBy(xpath="//div[@class='form-group']//textarea[@id='DetailsOtherPreviousPra']")WebElement details_other_previous_pra;
 	@FindBy(xpath="//textarea[@id='Title']")WebElement titel_PRA;
 	@FindBy(xpath="//textarea[@id='PraArea']")WebElement pra_area;
 	@FindBy(xpath="//textarea[@id='Scope']")WebElement scop;
 	@FindBy(xpath="//label[@for='NoPreviousPraExists']")WebElement Noprevious;
+	@FindBy(xpath="//div[@class='switch-field']//label[text()='Yes']")WebElement yesprevious;
 	@FindBy(xpath="//span[@class='glyphicon toggle-icon']")WebElement reference_icon;
 	@FindBy(xpath="//body[@id='tinymce']//p")WebElement reference_textbox;
 	@FindBy(xpath="//div[@class='datepicker-days']//table[@class='table-condensed']//tr[2]//th[2]")WebElement month;
@@ -64,8 +66,20 @@ public class ByPest_initiation extends PRA_Home{
 		String title_error_text=title_error.getText();
 		Thread.sleep(1000);
 		logger17.log(Status.PASS, "4 "+title_error_text);
-		
 		//Fill out fields and make sure data saved
+		//Check for manually adding a pest 
+		pestname.sendKeys(Pestname);
+		Thread.sleep(1000);
+				
+		logger17.log(Status.PASS, "pestname_abc got entered in pestname textbox");
+				
+		add.click();
+		logger17.log(Status.PASS, "Add button got clicked");
+		Thread.sleep(1000);
+		remove.click();
+		logger17.log(Status.PASS, "Remove button got clicked and pest got removed");
+		Thread.sleep(1000);
+		
 	    //Check adding a pest using the lookup
 		searchpestname.sendKeys("pratylenchus");
 		logger17.log(Status.PASS, "pratylenchus text entered in pest search box");
@@ -86,22 +100,7 @@ public class ByPest_initiation extends PRA_Home{
 		Thread.sleep(1000);
 		logger17.log(Status.PASS, "pratylenchus pest is selected ");
 		
-		remove.click();
-		logger17.log(Status.PASS, "Remove button got clicked and pest got removed");
-		Thread.sleep(1000);
-		
-		//Check for manually adding a pest 
-		pestname.sendKeys(Pestname);
-		Thread.sleep(1000);
-		
-		logger17.log(Status.PASS, "pestname_abc got entered in pestname textbox");
-		
-		add.click();
-		logger17.log(Status.PASS, "Add button got clicked");
-		Thread.sleep(1000);
-		
-		
-		yes_button_in.click();
+		yes_button.click();
 		Thread.sleep(1000);
 		logger17.log(Status.PASS, "Is this a demo or test PRA-yes button got clicked");
 		Select s1=new Select(wd.findElement(By.xpath("//select[@id='CountryAtRisk']")));
@@ -153,6 +152,14 @@ public class ByPest_initiation extends PRA_Home{
 		s2.selectByVisibleText("Demo or test PRA");
 		Thread.sleep(2000);
 		logger17.log(Status.PASS, "Reason of PRA-Demo or test PRA is selected");
+		yesprevious.click();
+		logger17.log(Status.PASS, "Do previous PRAs exist for this pest- Yes button got clicked");
+		Thread.sleep(1000);
+		details_previous_pra.sendKeys("abc");
+		Thread.sleep(500);
+		details_other_previous_pra.sendKeys("abc");
+		Thread.sleep(1000);
+		
 		Noprevious.click();
 		Thread.sleep(2000);
 		logger17.log(Status.PASS,"Do previous PRAs exist for this pest- No button got clicked");

@@ -103,6 +103,11 @@ public class Risk_assessment extends PRA_Home{
 		wd.switchTo().defaultContent();
 		Thread.sleep(1000);
 		
+		// for import from cpc button
+		if(tab_under_risk_assessment.equalsIgnoreCase("Potential consequences"))
+		{
+			import_from_cpc();
+		}
 		save.click();
 		Thread.sleep(3000);
 		logger20.log(Status.PASS, tab_under_risk_assessment+" tab is saved");
@@ -132,7 +137,43 @@ public class Risk_assessment extends PRA_Home{
 		jse.executeScript("window.scrollBy(0,200)", "");
 	}
 	
-	
+	//to import from cpc for question 1 3 and 7
+	public static void import_from_cpc() throws InterruptedException
+	{
+		List<WebElement>import_cpc_button=wd.findElements(By.xpath("//div[@class='col-sm-2 import-from-cpc']//a"));
+		int p=1;
+		for(WebElement cpc_button : import_cpc_button)
+		{
+			cpc_button.click();
+			Thread.sleep(4000);
+			if(p==1)
+			{
+			wd.switchTo().frame(0);
+			logger20.log(Status.PASS, "----------Import from CPC button got clicked of question 1--------");
+			String para2_text=wd.findElement(By.xpath("//body[@data-id='Questions_0__Notes']//p[2]")).getText();
+			logger20.log(Status.PASS, "Text imported in second paragraph is -"+ para2_text);
+			String para3_text=wd.findElement(By.xpath("//body[@data-id='Questions_0__Notes']//p[3]")).getText();
+			logger20.log(Status.PASS, "Text imported in Third paragraph is -"+ para3_text);
+			wd.switchTo().defaultContent();
+			}
+			else if(p==2)
+			{
+				logger20.log(Status.PASS, "-----------Import from CPC button got clicked of question 3---------");
+				String model_alert_text=wd.findElement(By.xpath("//div[@id='modalAlertDialog']//div[@class='modal-body']//p")).getText();
+				logger20.log(Status.PASS,"Alert for question 2 -"+model_alert_text );
+				wd.findElement(By.xpath("//button[text()='Close']")).click();
+			}
+			else if(p==3)
+			{
+				logger20.log(Status.PASS, "-----------Import from CPC button got clicked of question 7---------");
+				String model_alert_text=wd.findElement(By.xpath("//div[@id='modalAlertDialog']//div[@class='modal-body']//p")).getText();
+				logger20.log(Status.PASS,"Alert for question 2 -"+model_alert_text );
+				wd.findElement(By.xpath("//button[text()='Close']")).click();
+			}
+			
+			p++;
+		}
+	}
 	@FindBy(xpath="//span[text()='Plants for planting']")WebElement plants_for_planting;
 	@FindBy(xpath="//span[text()='Seeds for planting']")WebElement seeds_for_planting;
 	@FindBy(xpath="//div[@class='col-sm-4']//h3[text()='Probability of establishment']")WebElement Probability_of_establishment;
