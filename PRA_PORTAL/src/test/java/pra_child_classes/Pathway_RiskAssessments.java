@@ -139,6 +139,21 @@ public class Pathway_RiskAssessments extends PRA_Home{
 	@FindBy(xpath="//*[@id=\"RiskAssessmentSections_3__RiskAssessmentQuestions_0__SelectedConfidenceLevel\"]")
 	WebElement loss_2;
 	
+	@FindBy(xpath = "//a[@class='btn btn-pra-red pull-right'][1]")
+	WebElement importcpc1;
+	
+	@FindBy(xpath = "(//a[@class='btn btn-pra-red pull-right'])[2]")
+	WebElement importcpc2;
+	
+	@FindBy(xpath = "//button[@class='btn btn-pra-gray' and text()='Close']")
+	WebElement close2;
+	
+	@FindBy(xpath = "(//a[@class='btn btn-pra-red pull-right'])[3]")
+	WebElement importcpc3;
+	
+	@FindBy(xpath = "//button[@class='btn btn-pra-gray' and text()='Close']")
+	WebElement close3;
+	
 	@FindBy(xpath="//*[@id=\"form3\"]/div[11]/div[2]/div/div/div/div[2]/div/input[1]")
 	WebElement save_4;
 	
@@ -200,7 +215,7 @@ public class Pathway_RiskAssessments extends PRA_Home{
 		rapid_assessment_button.click();
 		Logger10.log(Status.PASS, "Rapid Assessment button clicked successfully");
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		potential_for_establishment_spread_option.click();
 		Thread.sleep(2000);
 		Select potential = new Select(select_option_1);
@@ -310,6 +325,21 @@ public class Pathway_RiskAssessments extends PRA_Home{
 		Select economic1= new Select(loss_2);
 		economic1.selectByValue("2");
 		Logger10.log(Status.PASS, " Rating selected Successfully ");
+		
+		Thread.sleep(2000);
+		importcpc1.click();
+		
+		Thread.sleep(3000);
+		importcpc2.click();
+		
+		Thread.sleep(2000);
+		close2.click();
+		
+		Thread.sleep(3000);
+		importcpc3.click();
+		
+		Thread.sleep(2000);
+		close3.click();
 		
 		Thread.sleep(3000);
 		save_4.click();

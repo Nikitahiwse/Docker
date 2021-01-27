@@ -10,6 +10,8 @@ import pra_package.PRA_Home;
 
 public class ByPathway extends PRA_Home {
 	
+	
+	
 	@FindBy(linkText = "ABC")
 	WebElement team;
 		
@@ -45,6 +47,14 @@ public class ByPathway extends PRA_Home {
 	
 	@FindBy(xpath="//input[@class='ga_CommodityType_Leaves']")
 	WebElement leaves;
+	
+	//@FindBy(xpath = "//input[@name='PreviousPraExists'][1]")
+	//@FindBy(xpath = "//input[@name='PreviousPraExists' and @value='True']")
+	@FindBy(xpath = "//div[@class='switch-field']//label[text()='Yes']")
+	WebElement Previous_PRA;
+	
+	@FindBy(name = "PreviousPRAsForPathwayNotes")
+	WebElement details;
 	
 	@FindBy(name="Notes")
 	WebElement note;
@@ -90,6 +100,7 @@ public class ByPathway extends PRA_Home {
 	
 	
 	public void Initiation(String Title) throws Throwable {
+		
 		team.click();
 		Logger9.log(Status.PASS, "Clicked on team");
 		
@@ -135,6 +146,12 @@ public class ByPathway extends PRA_Home {
 		Thread.sleep(3000);
 		leaves.click();
 		Logger9.log(Status.PASS, "leaves checkbox selected successfully");
+		
+		Thread.sleep(3000);
+		Previous_PRA.click();
+		
+		Thread.sleep(2000);
+		details.sendKeys("Abc");
 		
 		Thread.sleep(3000);
 		note.sendKeys("commodity selected");
