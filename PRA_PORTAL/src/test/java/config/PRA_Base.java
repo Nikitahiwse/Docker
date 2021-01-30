@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -14,9 +16,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class PRA_Base 
 {
+	    String host = "localhost";
 	    static Properties prop;
 	    
 	    public static WebDriver wd;
@@ -27,17 +31,17 @@ public class PRA_Base
 	     prop=new Properties();
 	     
 	     try {
-		InputStream input=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config\\config.properties");
+		InputStream input=new FileInputStream(System.getProperty("user.dir")+"/src/test/java/config/config.properties");
 		prop.load(input);
 		
-		InputStream input2=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config\\mycabi.properties");
+		InputStream input2=new FileInputStream(System.getProperty("user.dir")+"/src/test/java/config/mycabi.properties");
 		prop.load(input2);
 		
 
-		InputStream input3=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config\\By_pest.properties");
+		InputStream input3=new FileInputStream(System.getProperty("user.dir")+"/src/test/java/config/By_pest.properties");
 		prop.load(input3);
 		
-		InputStream input4=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config\\ByPathway_Generation.properties");
+		InputStream input4=new FileInputStream(System.getProperty("user.dir")+"/src/test/java/config/ByPathway_Generation.properties");
 		prop.load(input4);
 		
 		
@@ -63,9 +67,7 @@ public class PRA_Base
 		 */
 
         //for browser opening 
-	   public void initialzation(String URL) throws InterruptedException
-
-	   {   
+	   public void initialzation(String url_name) throws InterruptedException, MalformedURLException {
 		   
 		folder=new File(UUID.randomUUID().toString());
 		folder.mkdir();
@@ -82,10 +84,12 @@ public class PRA_Base
 		option.setExperimentalOption("prefs", prefs);
 		DesiredCapabilities cap=DesiredCapabilities.chrome();
 		cap.setCapability(ChromeOptions.CAPABILITY, option);
+
+		   String completeUrl = "http://" + host + ":4444/wd/hub";
+		   this.wd = new RemoteWebDriver(new URL(completeUrl), cap);
 		
-		
-		wd=new ChromeDriver(cap);
-		wd.get(URL);
+		//wd=new ChromeDriver(cap);
+		wd.get(url_name);
 		Thread.sleep(8000);
 		wd.manage().window().maximize();
 	    }
